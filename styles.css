@@ -186,22 +186,28 @@ a img{
 .profile-block {
   text-align: left;
   display: inline-block;
-  width: 200px;
 }
 
 .profile-block .mdl-card {
-  width: 500px;
+  margin-top: 30px;
+  width: 520px;
 }
 
 .profile-block .profile-title {
+  color: #767777;
   text-align: center;
   font-size: 30px;
+  margin-top: 10px;
   margin-bottom: 16px;
 }
 
 .profile-block .profile-content {
   font-size: 25px;
-  line-height: 30px;
+  line-height: 40px;
+}
+
+.profile-block .profile-icons {
+  text-align: center;
 }
 
 .android-screen .android-link {
@@ -238,15 +244,6 @@ a img{
     vertical-align: middle;
   }
 
-.android-alt-link {
-  text-decoration: none;
-  color: #64ffda !important;
-  font-size: 16px;
-}
-
-  .android-alt-link:hover {
-    color: #00bfa5 !important;
-  }
 
   .android-alt-link .material-icons {
     position: relative;
@@ -324,7 +321,7 @@ a img{
 }
 
   .android-footer a:hover {
-    color: #8bc34a;
+    color: #ffee35;
   }
 
   .android-footer .mdl-mega-footer--top-section::after {
