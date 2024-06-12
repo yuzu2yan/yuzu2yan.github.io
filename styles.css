@@ -420,6 +420,8 @@ a img{
 
   .android-footer .mdl-mega-footer--bottom-section {
     display: none;
-    text-align: center;
+  }
+  .mdl-mega-footer--bottom-section img{
+    align-items: center;
   }
 }
