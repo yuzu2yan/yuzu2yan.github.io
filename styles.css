@@ -418,11 +418,6 @@ a img{
     display: none;
   }
 
-  .android-wear-band-text {
-    margin-left: 0;
-    padding: 16px;
-  }
-
   .android-footer .mdl-mega-footer--bottom-section {
     display: none;
     text-align: center;
