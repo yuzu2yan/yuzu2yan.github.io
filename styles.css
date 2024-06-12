@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright Yuzu. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,10 +33,6 @@ a img{
   color: #fff;
 }
 
-.android-search-box .mdl-textfield__input {
-  color: rgba(0, 0, 0, 0.87);
-}
-
 .android-header .mdl-menu__container {
   z-index: 50;
   margin: 0 !important;
@@ -62,8 +58,8 @@ a img{
 
 
 .android-logo-image {
-  height: 100px;
-  width: 100px;
+  height: 60px;
+  width: 60px;
 
 }
 
@@ -176,7 +172,7 @@ a img{
   height: 800px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('images/slide01.jpg') center 30% no-repeat;
+  background: url('images/main.png') center 30% no-repeat;
   background-size: cover;
 }
 
@@ -193,7 +189,7 @@ a img{
 }
 
 .android-sub-slogan {
-  font-size: 21px;
+  font-size: 40px;
   padding-top: 24px;
 }
 
@@ -451,7 +447,7 @@ a img{
   }
 
   .android-footer .mdl-mega-footer--bottom-section a {
-    margin-right: 2em;
+    margin-right: 0;
   }
 
   .android-footer .mdl-mega-footer--right-section a .material-icons {
