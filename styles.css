@@ -60,7 +60,7 @@ a img{
 .android-logo-image {
   height: 50px;
   width: 50px;
-  position: relative
+  position: relative;
 }
 
 
@@ -191,7 +191,7 @@ a img{
 
 .profile-block .mdl-card {
   margin-top: 30px;
-  width: 520px;
+  width: 480px;
 }
 
 .profile-block .profile-title {
@@ -203,7 +203,10 @@ a img{
 }
 
 .profile-block .profile-content {
-  font-size: 25px;
+  left: 0px;
+  text-align: left;
+  margin-right: 0px;
+  font-size: 20px;
   line-height: 40px;
 }
 
@@ -277,9 +280,6 @@ a img{
     margin-left: 12px;
     padding-bottom: 24px;
   }
-
-.android-card-container {
-}
 
   .android-card-container .mdl-card__media {
     overflow: hidden;
@@ -370,16 +370,40 @@ a img{
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .mdl-layout__header-row .android-logo-image {
+    height: 40px;
+    width: 40px;
+    right: 70px;
+  }
+
+  .profile {
+    justify-content: center;
+    height: auto; 
+    padding: 15px;
+    margin: 0 auto;
+  }
+
+  .profile-block .profile-content {
+    text-align: left;
+    width: 100%;
+  }
+
+  .profile-block .profile-icons {
+    width: 100%;
+  }
+
+  .profile-block {
+    display: inline-block;
+    display: -webkit-flex;
+    
+  }
+
   /* WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10 break
      consecutive "+" operators in some cases. Therefore, we need to use both
      here to cover all the bases. */
   .android.android-search-box.is-focused ~ .android-mobile-title,
   .android-search-box.is-focused + .android-navigation-container + .android-mobile-title {
     opacity: 0;
-  }
-
-  .android-more-button {
-    display: none;
   }
 
   .android-be-together-section {
@@ -394,12 +418,13 @@ a img{
   }
 
   .profile .profile-block .profile-title {
-    display: none;
+    /* display:  ; */
   }
 
  
   .profile .profile-block .profile-content {
-    margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 16px;
   }
 
