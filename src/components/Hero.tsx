@@ -52,17 +52,17 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-8 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-8"
         >
           <div className="inline-block relative">
             <div className="absolute inset-0 bg-accent/20 blur-2xl animate-pulse-slow"></div>
             <h1 className="relative text-6xl md:text-8xl font-bold">
-              <span className="bg-gradient-to-r from-accent via-primary-500 to-accent-dark bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent-dark via-accent to-primary-700 bg-clip-text text-transparent">
                 Be Creative
               </span>
             </h1>
@@ -106,17 +106,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-accent/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-accent rounded-full mt-2 animate-float"></div>
-        </div>
-      </motion.div>
     </section>
   )
 }

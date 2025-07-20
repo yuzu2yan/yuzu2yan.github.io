@@ -61,22 +61,55 @@ export default function LoadingAnimation() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
-                YUZU
+              <h1 className="text-3xl md:text-4xl font-bold text-accent animate-blink">
+                WELCOME TO YUZU LABO
               </h1>
             </motion.div>
           </div>
 
-          {/* Welcome text */}
+          {/* Welcome text with animated background */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-full"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           >
-            <h2 className="text-2xl font-light text-neutral-600">
-              Welcome to My Portfolio
-            </h2>
+            <div className="relative">
+              {/* Background decoration */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 -inset-x-20 -inset-y-4"
+              >
+                <div className="absolute top-0 left-1/2 w-2 h-2 bg-accent rounded-full"></div>
+                <div className="absolute bottom-0 right-1/4 w-3 h-3 bg-primary-400 rounded-full"></div>
+                <div className="absolute top-1/2 left-0 w-2 h-2 bg-accent/50 rounded-full"></div>
+              </motion.div>
+              
+              {/* Main text */}
+              <div className="relative bg-white/90 backdrop-blur-sm px-12 py-6 rounded-2xl shadow-xl border border-accent/20">
+                <h2 className="text-3xl font-bold text-center">
+                  <span className="bg-gradient-to-r from-accent via-primary-500 to-accent-dark bg-clip-text text-transparent">
+                    Welcome to
+                  </span>
+                </h2>
+                <p className="text-xl font-light text-neutral-700 text-center mt-2">
+                  My Creative Space
+                </p>
+              </div>
+              
+              {/* Floating elements */}
+              <motion.div
+                animate={{ y: [-10, 10, -10] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -top-8 -right-8 w-16 h-16 bg-accent/10 rounded-full blur-xl"
+              />
+              <motion.div
+                animate={{ y: [10, -10, 10] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                className="absolute -bottom-8 -left-8 w-20 h-20 bg-primary-200/20 rounded-full blur-xl"
+              />
+            </div>
           </motion.div>
 
           {/* Loading text */}

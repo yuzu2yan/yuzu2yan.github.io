@@ -30,14 +30,14 @@ const skills = [
 
 export default function Profile() {
   return (
-    <section id="about" className="py-24 bg-white relative overflow-hidden">
+    <section id="about" className="py-24 bg-white relative overflow-hidden w-full">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 -left-48 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-primary-100/10 rounded-full blur-3xl"></div>
       </div>
       
-      <div className="relative w-full max-w-6xl mx-auto px-8 sm:px-12 lg:px-16">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,20 +53,60 @@ export default function Profile() {
           <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
         </motion.div>
 
-        {/* Introduction */}
+        {/* Introduction with Profile Image */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-16"
         >
-          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-800">
-            Joe Kohzen (Yuzu)
-          </h3>
-          <p className="text-xl text-neutral-600">
-            Computer Science Graduate Student & Robotics Enthusiast
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            {/* Profile Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-accent/20 to-accent/10 p-1">
+                <div className="w-full h-full rounded-full bg-white p-2">
+                  <Image
+                    src="/profile_img.jpg"
+                    alt="Profile"
+                    width={256}
+                    height={256}
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                </div>
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/10 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary-200/20 rounded-full blur-xl"></div>
+            </motion.div>
+            
+            {/* Text Content */}
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-800">
+                Joe Kohzen (Yuzu)
+              </h3>
+              <p className="text-xl text-neutral-600 mb-6">
+                Computer Science Graduate Student & Robotics Enthusiast
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                <span className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
+                  🎓 Graduate Student
+                </span>
+                <span className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
+                  🤖 Robotics
+                </span>
+                <span className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
+                  💻 AI & ML
+                </span>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Details Section */}
@@ -75,7 +115,7 @@ export default function Profile() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="space-y-12 mb-20"
+          className="space-y-20 mb-24"
         >
           {/* Personal Info */}
           <motion.div
@@ -83,13 +123,13 @@ export default function Profile() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center"
           >
-            <div className="flex items-center justify-center mb-4">
-              <Calendar className="w-6 h-6 text-accent mr-3" />
-              <h4 className="text-xl font-semibold text-neutral-800">Personal Details</h4>
+            <div className="flex items-center justify-center mb-6">
+              <Calendar className="w-8 h-8 text-accent mr-3" />
+              <h4 className="text-2xl font-semibold text-neutral-800">Personal Details</h4>
             </div>
-            <p className="text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto">
               Born on February 22nd, I'm currently pursuing my graduate studies at Shibaura Institute of Technology, 
               specializing in Computer Science. My passion lies in robotics, world models, and digital twin technologies.
             </p>
@@ -103,11 +143,11 @@ export default function Profile() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="flex items-center justify-center mb-4">
-              <Heart className="w-6 h-6 text-accent mr-3" />
-              <h4 className="text-xl font-semibold text-neutral-800">What I Love</h4>
+            <div className="flex items-center justify-center mb-6">
+              <Heart className="w-8 h-8 text-accent mr-3" />
+              <h4 className="text-2xl font-semibold text-neutral-800">What I Love</h4>
             </div>
-            <p className="text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto">
               I have a deep love for Robots 🤖, Penguins 🐧, and Sweets 🍫. 
               In my free time, you'll find me cafe hopping ☕️, cooking 🍳, 
               or creating something new 💡.
