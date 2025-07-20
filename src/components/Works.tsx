@@ -4,10 +4,11 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { ExternalLink, Trophy, Rocket, Music, Target } from "lucide-react"
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination } from 'swiper/modules'
+import { Navigation, Pagination, FreeMode, Mousewheel } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import 'swiper/css/free-mode'
 
 const projects = [
   {
@@ -57,6 +58,10 @@ export default function Works() {
       <style jsx global>{`
         .works-swiper {
           padding: 20px 40px 60px 40px;
+          cursor: grab;
+        }
+        .works-swiper:active {
+          cursor: grabbing;
         }
         .works-swiper .swiper-slide {
           height: auto;
@@ -104,7 +109,7 @@ export default function Works() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-100/10 rounded-full blur-3xl"></div>
       
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative max-w-6xl mx-auto px-8 sm:px-12 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -131,13 +136,22 @@ export default function Works() {
         >
           <Swiper
             spaceBetween={30}
-            centeredSlides={false}
             slidesPerView={'auto'}
+            centeredSlides={false}
             grabCursor={true}
-            freeMode={true}
+            freeMode={{
+              enabled: true,
+              sticky: true,
+            }}
+            mousewheel={{
+              forceToAxis: true,
+            }}
             navigation={true}
-            pagination={{ clickable: true }}
-            modules={[Navigation, Pagination]}
+            pagination={{ 
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            modules={[Navigation, Pagination, FreeMode, Mousewheel]}
             className="works-swiper"
             breakpoints={{
               640: {

@@ -37,7 +37,7 @@ export default function Profile() {
         <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-primary-100/10 rounded-full blur-3xl"></div>
       </div>
       
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full max-w-6xl mx-auto px-8 sm:px-12 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
