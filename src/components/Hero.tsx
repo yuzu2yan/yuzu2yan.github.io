@@ -16,13 +16,25 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16">
+      {/* Futuristic cross-line animation */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Horizontal line */}
+        <div className="absolute top-1/2 left-0 right-0 h-[3px] -translate-y-1/2">
+          <div className="absolute h-full w-full bg-gradient-to-r from-transparent via-accent to-transparent animate-line-horizontal opacity-80"></div>
+        </div>
+        {/* Vertical line */}
+        <div className="absolute left-1/2 top-0 bottom-0 w-[3px] -translate-x-1/2">
+          <div className="absolute h-full w-full bg-gradient-to-b from-transparent via-accent to-transparent animate-line-vertical opacity-80"></div>
+        </div>
+      </div>
+      
       {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-hero-pattern opacity-50"></div>
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-hero-pattern opacity-30"></div>
         
         {/* Floating geometric shapes */}
         <motion.div
-          className="absolute top-20 left-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-accent/5 rounded-full blur-3xl"
           animate={{
             x: mousePosition.x * 0.02,
             y: mousePosition.y * 0.02,
@@ -30,7 +42,7 @@ export default function Hero() {
           transition={{ type: "spring", stiffness: 50 }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl"
+          className="absolute bottom-20 right-10 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-primary-200/10 rounded-full blur-3xl"
           animate={{
             x: mousePosition.x * -0.03,
             y: mousePosition.y * -0.03,
@@ -38,17 +50,6 @@ export default function Hero() {
           transition={{ type: "spring", stiffness: 30 }}
         />
         
-        {/* Geometric decorations */}
-        <motion.div
-          className="absolute top-1/4 right-1/4 w-32 h-32 border-4 border-accent/20 rotate-45"
-          animate={{ rotate: 45 + mousePosition.x * 0.05 }}
-          transition={{ type: "spring", stiffness: 50 }}
-        />
-        <motion.div
-          className="absolute bottom-1/3 left-1/3 w-24 h-24 bg-accent/10 rotate-12"
-          animate={{ rotate: 12 + mousePosition.y * 0.05 }}
-          transition={{ type: "spring", stiffness: 50 }}
-        />
       </div>
 
       {/* Content */}
@@ -60,9 +61,9 @@ export default function Hero() {
           className="mb-8"
         >
           <div className="inline-block relative">
-            <div className="absolute inset-0 bg-accent/20 blur-2xl animate-pulse-slow"></div>
-            <h1 className="relative text-6xl md:text-8xl font-bold">
-              <span className="bg-gradient-to-r from-accent-dark via-accent to-primary-700 bg-clip-text text-transparent">
+            <div className="absolute inset-0 bg-accent/10 blur-3xl animate-pulse-slow -z-10"></div>
+            <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">
+              <span className="text-neutral-900">
                 Be Creative
               </span>
             </h1>
@@ -73,7 +74,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-xl md:text-2xl text-neutral-600 mb-12"
+          className="text-lg sm:text-xl md:text-2xl text-neutral-600 mb-8 sm:mb-12 px-4"
         >
           The world is better with Tech
         </motion.p>
@@ -86,7 +87,7 @@ export default function Hero() {
         >
           <a
             href="#about"
-            className="inline-flex items-center px-8 py-4 bg-accent text-white font-medium rounded-lg hover:bg-accent-dark transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white font-medium rounded-lg hover:bg-accent-dark transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
           >
             Explore My Work
             <svg

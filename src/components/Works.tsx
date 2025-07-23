@@ -54,7 +54,7 @@ const projects = [
 
 export default function Works() {
   return (
-    <section id="works" className="py-24 bg-white relative overflow-hidden">
+    <section id="works" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
       <style jsx global>{`
         .works-swiper {
           padding: 20px 40px 60px 40px;
@@ -117,7 +117,7 @@ export default function Works() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
             <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
               Recent Works
             </span>
@@ -172,7 +172,7 @@ export default function Works() {
               <SwiperSlide key={index}>
                 <motion.div 
                   whileHover={{ y: -10 }}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                  className="bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
                   {/* Award Badge */}
                   {project.award && (
                     <div className="absolute top-4 right-4 z-20">
@@ -188,7 +188,7 @@ export default function Works() {
                   )}
                   
                   {/* Image */}
-                  <div className="relative h-56 overflow-hidden bg-neutral-100">
+                  <div className="relative h-48 sm:h-56 overflow-hidden bg-neutral-100">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
                     <Image
                       src={project.image}
@@ -196,25 +196,15 @@ export default function Works() {
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    {/* Icon Overlay */}
-                    <div className="absolute bottom-4 left-4 z-20">
-                      <motion.div
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 0.6 }}
-                        className={`w-14 h-14 bg-gradient-to-r ${project.color} rounded-xl flex items-center justify-center shadow-lg`}
-                      >
-                        <project.icon className="w-7 h-7 text-white" />
-                      </motion.div>
-                    </div>
                   </div>
                   
                   {/* Content */}
-                  <div className="p-6 space-y-4">
-                    <h3 className="text-xl font-bold text-neutral-800 line-clamp-2">
+                  <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                    <h3 className="text-lg sm:text-xl font-bold text-neutral-800 line-clamp-2">
                       {project.title}
                     </h3>
                     
-                    <p className="text-neutral-600 text-sm line-clamp-3">
+                    <p className="text-neutral-600 text-xs sm:text-sm line-clamp-3">
                       {project.description}
                     </p>
                     
@@ -260,7 +250,7 @@ export default function Works() {
             href="https://github.com/yuzu2yan"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-white border-2 border-accent text-accent font-medium rounded-full hover:bg-accent hover:text-white transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
+            className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-accent text-accent font-medium rounded-full hover:bg-accent hover:text-white transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group text-sm sm:text-base"
           >
             View All Projects on GitHub
             <ExternalLink size={20} className="ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

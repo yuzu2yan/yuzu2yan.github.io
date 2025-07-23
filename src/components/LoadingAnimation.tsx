@@ -5,13 +5,23 @@ import { useEffect, useState } from "react"
 
 export default function LoadingAnimation() {
   const [isLoading, setIsLoading] = useState(true)
+  const [showYuzuLab, setShowYuzuLab] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    // Show YUZU LAB after 1.5 seconds
+    const yuzuTimer = setTimeout(() => {
+      setShowYuzuLab(true)
+    }, 1500)
+
+    // Hide everything after 3 seconds
+    const hideTimer = setTimeout(() => {
       setIsLoading(false)
     }, 3000)
 
-    return () => clearTimeout(timer)
+    return () => {
+      clearTimeout(yuzuTimer)
+      clearTimeout(hideTimer)
+    }
   }, [])
 
   return (
@@ -24,7 +34,7 @@ export default function LoadingAnimation() {
           className="fixed inset-0 z-[100] bg-white flex items-center justify-center"
         >
           {/* Geometric shapes animation */}
-          <div className="relative w-64 h-64">
+          <div className="relative w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64">
             {/* Central circle */}
             <motion.div
               initial={{ scale: 0, rotate: 0 }}
@@ -32,7 +42,7 @@ export default function LoadingAnimation() {
               transition={{ duration: 1, ease: "easeOut" }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <div className="w-32 h-32 bg-accent/20 rounded-full"></div>
+              <div className="w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-accent/20 rounded-full"></div>
             </motion.div>
 
             {/* Rotating squares */}
@@ -42,7 +52,7 @@ export default function LoadingAnimation() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <div className="w-40 h-40 border-4 border-accent/40"></div>
+              <div className="w-32 sm:w-36 md:w-40 h-32 sm:h-36 md:h-40 border-4 border-accent/40"></div>
             </motion.div>
 
             <motion.div
@@ -51,66 +61,36 @@ export default function LoadingAnimation() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <div className="w-48 h-48 border-4 border-accent/30"></div>
+              <div className="w-40 sm:w-44 md:w-48 h-40 sm:h-44 md:h-48 border-4 border-accent/30"></div>
             </motion.div>
 
             {/* Logo text */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <h1 className="text-3xl md:text-4xl font-bold text-accent animate-blink">
-                WELCOME TO YUZU LABO
-              </h1>
+              <div className="text-center">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent animate-quick-blink mb-2">
+                  WELCOME TO
+                </h1>
+                <AnimatePresence>
+                  {showYuzuLab && (
+                    <motion.h1
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4 }}
+                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent animate-pulse"
+                    >
+                      YUZU LAB.
+                    </motion.h1>
+                  )}
+                </AnimatePresence>
+              </div>
             </motion.div>
           </div>
 
-          {/* Welcome text with animated background */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          >
-            <div className="relative">
-              {/* Background decoration */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 -inset-x-20 -inset-y-4"
-              >
-                <div className="absolute top-0 left-1/2 w-2 h-2 bg-accent rounded-full"></div>
-                <div className="absolute bottom-0 right-1/4 w-3 h-3 bg-primary-400 rounded-full"></div>
-                <div className="absolute top-1/2 left-0 w-2 h-2 bg-accent/50 rounded-full"></div>
-              </motion.div>
-              
-              {/* Main text */}
-              <div className="relative bg-white/90 backdrop-blur-sm px-12 py-6 rounded-2xl shadow-xl border border-accent/20">
-                <h2 className="text-3xl font-bold text-center">
-                  <span className="bg-gradient-to-r from-accent via-primary-500 to-accent-dark bg-clip-text text-transparent">
-                    Welcome to
-                  </span>
-                </h2>
-                <p className="text-xl font-light text-neutral-700 text-center mt-2">
-                  My Creative Space
-                </p>
-              </div>
-              
-              {/* Floating elements */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-8 -right-8 w-16 h-16 bg-accent/10 rounded-full blur-xl"
-              />
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                className="absolute -bottom-8 -left-8 w-20 h-20 bg-primary-200/20 rounded-full blur-xl"
-              />
-            </div>
-          </motion.div>
 
           {/* Loading text */}
           <motion.div
