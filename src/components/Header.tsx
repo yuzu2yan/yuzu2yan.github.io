@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { IconMenu2, IconX, IconCode } from "@tabler/icons-react"
+import Image from "next/image"
+import { IconMenu2, IconX } from "@tabler/icons-react"
 import { cn } from "@/lib/utils"
 
 export default function Header() {
@@ -37,8 +38,15 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2" style={{ marginLeft: '40px' }}>
-              <span className="text-2xl font-medium text-black">
+            <Link href="/" className="flex items-center" style={{ marginLeft: '40px', gap: '12px' }}>
+              <Image
+                src="/images/penguin.png"
+                alt="Yuzu Logo"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+              <span className="text-2xl font-medium text-black" style={{ fontFamily: 'sans-serif' }}>
                 Yuzu
               </span>
             </Link>

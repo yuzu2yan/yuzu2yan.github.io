@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 
 interface GeometricLinesProps {
@@ -66,27 +67,39 @@ export function GeometricLines({
 }
 
 export function FloatingDots({ className }: { className?: string }) {
+  const [positions, setPositions] = useState<Array<{ x: string, y: string[], duration: number }>>([])
+
+  useEffect(() => {
+    // Generate random positions after mount
+    const newPositions = [...Array(5)].map(() => ({
+      x: Math.random() * 100 + "%",
+      y: [
+        Math.random() * 100 + "%",
+        Math.random() * 100 + "%",
+        Math.random() * 100 + "%"
+      ],
+      duration: 10 + Math.random() * 10
+    }))
+    setPositions(newPositions)
+  }, [])
+
   return (
     <div className={cn("absolute inset-0 overflow-hidden pointer-events-none", className)}>
-      {[...Array(5)].map((_, i) => (
+      {positions.map((pos, i) => (
         <motion.div
           key={i}
           className="absolute w-1 h-1 bg-cyan-500/30 rounded-full"
           initial={{ 
-            x: Math.random() * 100 + "%", 
-            y: Math.random() * 100 + "%",
+            x: `${i * 20}%`, 
+            y: `${i * 20}%`,
             scale: 0 
           }}
           animate={{ 
             scale: [0, 1, 0],
-            y: [
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%"
-            ]
+            y: pos.y
           }}
           transition={{ 
-            duration: 10 + Math.random() * 10,
+            duration: pos.duration,
             repeat: Infinity,
             delay: i * 0.5,
             ease: "linear"

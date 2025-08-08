@@ -12,7 +12,10 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
   const [isSafari, setIsSafari] = useState(false);
 
   useEffect(() => {
-    setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
+    // Check navigator after component mounts
+    if (typeof navigator !== 'undefined') {
+      setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
+    }
   }, []);
 
   return (

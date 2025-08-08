@@ -15,15 +15,21 @@ interface Particle {
 export function AnimatedParticles({ className }: { className?: string }) {
   const [particles, setParticles] = useState<Particle[]>([])
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
 
   useEffect(() => {
-    // Initialize particles
+    // Get window dimensions after mount
+    const width = window.innerWidth
+    const height = window.innerHeight
+    setDimensions({ width, height })
+
+    // Initialize particles with deterministic positions
     const initialParticles = Array.from({ length: 20 }, (_, i) => ({
       id: i,
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
+      x: (i * width) / 20,
+      y: (i * height) / 20,
+      vx: ((i % 2) - 0.5) * 0.5,
+      vy: ((i % 3) - 1) * 0.5,
     }))
     setParticles(initialParticles)
 
@@ -45,12 +51,12 @@ export function AnimatedParticles({ className }: { className?: string }) {
           y += vy
           
           // Bounce off walls
-          if (x < 0 || x > window.innerWidth) vx *= -1
-          if (y < 0 || y > window.innerHeight) vy *= -1
+          if (x < 0 || x > dimensions.width) vx *= -1
+          if (y < 0 || y > dimensions.height) vy *= -1
           
           // Keep in bounds
-          x = Math.max(0, Math.min(window.innerWidth, x))
-          y = Math.max(0, Math.min(window.innerHeight, y))
+          x = Math.max(0, Math.min(dimensions.width, x))
+          y = Math.max(0, Math.min(dimensions.height, y))
           
           return { ...particle, x, y, vx, vy }
         })
@@ -63,7 +69,7 @@ export function AnimatedParticles({ className }: { className?: string }) {
       window.removeEventListener("mousemove", handleMouseMove)
       cancelAnimationFrame(animationId)
     }
-  }, [])
+  }, [dimensions.width, dimensions.height])
 
   return (
     <div className={cn("fixed inset-0 pointer-events-none z-0", className)}>
@@ -133,27 +139,38 @@ export function MovingGradient({ className }: { className?: string }) {
 }
 
 export function FloatingShapes({ className }: { className?: string }) {
+  const [positions, setPositions] = useState<Array<{ x: string[], y: string[] }>>([])
+
+  useEffect(() => {
+    // Generate random positions after mount
+    const newPositions = [...Array(3)].map(() => ({
+      x: [
+        Math.random() * 100 + "%",
+        Math.random() * 100 + "%",
+        Math.random() * 100 + "%",
+      ],
+      y: [
+        Math.random() * 100 + "%",
+        Math.random() * 100 + "%",
+        Math.random() * 100 + "%",
+      ],
+    }))
+    setPositions(newPositions)
+  }, [])
+
   return (
     <div className={cn("absolute inset-0 overflow-hidden", className)}>
-      {[...Array(3)].map((_, i) => (
+      {positions.map((pos, i) => (
         <motion.div
           key={i}
           className="absolute"
           initial={{
-            x: Math.random() * 100 + "%",
-            y: Math.random() * 100 + "%",
+            x: `${i * 33}%`,
+            y: `${i * 33}%`,
           }}
           animate={{
-            x: [
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-            ],
-            y: [
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-            ],
+            x: pos.x,
+            y: pos.y,
             rotate: [0, 180, 360],
           }}
           transition={{
