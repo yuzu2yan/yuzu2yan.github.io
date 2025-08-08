@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Yuzu Profile",
+  title: "Yuzu | Portfolio",
   description: "Joe Kohzen (Yuzu) - Computer Science Student & Robotics Enthusiast",
 };
 

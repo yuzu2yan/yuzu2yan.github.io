@@ -1,10 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { IconMenu2, IconX, IconCode } from "@tabler/icons-react"
+import { cn } from "@/lib/utils"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -19,48 +19,47 @@ export default function Header() {
   }, [])
 
   const navItems = [
-    { href: "#about", label: "ABOUT" },
-    { href: "#works", label: "WORKS" },
-    { href: "#contact", label: "CONTACT" },
+    { href: "#about", label: "About" },
+    { href: "#works", label: "Works" },
+    { href: "#contact", label: "Contact" },
   ]
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white/95 backdrop-blur-lg shadow-lg' 
-        : 'bg-white/90 backdrop-blur-md'
-    }`}>
+    <header
+      className={cn(
+        "fixed top-0 w-full z-50 transition-all duration-300",
+        scrolled
+          ? "bg-white/80 backdrop-blur-lg border-b border-neutral-200"
+          : "bg-transparent"
+      )}
+    >
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center"
-            >
-              <Image
-                src="/images/yuzu-penguin.png"
-                alt="Yuzu Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10"
-              />
-              <span className="ml-2 text-lg font-bold bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
-                YUZU
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-2" style={{ marginLeft: '40px' }}>
+              <span className="text-2xl font-medium text-black">
+                Yuzu
               </span>
-            </motion.div>
-          </Link>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-16 lg:space-x-20">
+          <nav className="hidden md:flex items-center" style={{ gap: '32px', marginRight: '60px' }}>
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-neutral-700 hover:text-accent transition-colors relative group"
+                className="relative text-lg font-medium text-neutral-600 hover:text-black transition-colors group"
+                style={{ padding: '12px 16px' }}
               >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                <span className="relative z-10">{item.label}</span>
+                <motion.span
+                  className="absolute inset-0 bg-neutral-100 rounded-lg"
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileHover={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.2 }}
+                />
               </Link>
             ))}
           </nav>
@@ -68,7 +67,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-neutral-700 hover:bg-neutral-100 transition-colors"
+            className="md:hidden p-2 text-black hover:bg-neutral-100 rounded-lg transition-colors"
           >
             <AnimatePresence mode="wait">
               {isMenuOpen ? (
@@ -79,7 +78,7 @@ export default function Header() {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <X size={24} />
+                  <IconX size={24} />
                 </motion.div>
               ) : (
                 <motion.div
@@ -89,7 +88,7 @@ export default function Header() {
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu size={24} />
+                  <IconMenu2 size={24} />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -107,13 +106,13 @@ export default function Header() {
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white border-t border-neutral-200"
           >
-            <div className="px-4 py-4 space-y-1">
+            <div className="px-4 py-4 space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block px-4 py-3 text-base font-medium text-neutral-700 hover:text-accent hover:bg-neutral-50 rounded-lg transition-all text-center"
+                  className="block px-4 py-3 text-base font-medium text-neutral-600 hover:text-black hover:bg-neutral-50 rounded-lg transition-all"
                 >
                   {item.label}
                 </Link>

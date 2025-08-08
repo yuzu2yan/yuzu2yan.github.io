@@ -1,112 +1,156 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
+import Image from "next/image"
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
+import { TypewriterEffect } from "@/components/ui/typewriter-effect"
+import { GeometricLines, FloatingDots, HexagonPattern } from "@/components/ui/geometric-lines"
+import { AnimatedParticles, MovingGradient, FloatingShapes } from "@/components/ui/animated-particles"
 
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [mounted, setMounted] = useState(false)
+  const [showInitialText, setShowInitialText] = useState(false)
+  const [showProfile, setShowProfile] = useState(false)
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
+    setMounted(true)
   }, [])
 
+  useEffect(() => {
+    if (!mounted) return
+
+    // Wait for loading animation to finish (3s)
+    const loadingTimer = setTimeout(() => {
+      setShowInitialText(true)
+    }, 3200) // 3s loading + 200ms buffer
+
+    // Hide initial text after showing it
+    const hideTextTimer = setTimeout(() => {
+      setShowInitialText(false)
+      setTimeout(() => setShowProfile(true), 500)
+    }, 6200) // 3.2s wait + 3s display
+
+    return () => {
+      clearTimeout(loadingTimer)
+      clearTimeout(hideTextTimer)
+    }
+  }, [mounted])
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16">
-      {/* Futuristic cross-line animation */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {/* Horizontal line */}
-        <div className="absolute top-1/2 left-0 right-0 h-[3px] -translate-y-1/2">
-          <div className="absolute h-full w-full bg-gradient-to-r from-transparent via-accent to-transparent animate-line-horizontal opacity-80"></div>
-        </div>
-        {/* Vertical line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-[3px] -translate-x-1/2">
-          <div className="absolute h-full w-full bg-gradient-to-b from-transparent via-accent to-transparent animate-line-vertical opacity-80"></div>
-        </div>
-      </div>
-      
-      {/* Animated background elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-hero-pattern opacity-30"></div>
-        
-        {/* Floating geometric shapes */}
-        <motion.div
-          className="absolute top-20 left-10 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-accent/5 rounded-full blur-3xl"
-          animate={{
-            x: mousePosition.x * 0.02,
-            y: mousePosition.y * 0.02,
-          }}
-          transition={{ type: "spring", stiffness: 50 }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-primary-200/10 rounded-full blur-3xl"
-          animate={{
-            x: mousePosition.x * -0.03,
-            y: mousePosition.y * -0.03,
-          }}
-          transition={{ type: "spring", stiffness: 30 }}
-        />
-        
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-24">
+      {/* Background animations */}
+      {mounted && (
+        <>
+          <AnimatedParticles />
+          <MovingGradient />
+          <FloatingShapes />
+          <HexagonPattern className="text-neutral-900" />
+          <GeometricLines position="top-right" color="stroke-cyan-500/30" />
+          <GeometricLines position="bottom-left" color="stroke-cyan-400/20" className="rotate-180" />
+          <FloatingDots />
+        </>
+      )}
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 w-full">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-8"
-        >
-          <div className="inline-block relative">
-            <div className="absolute inset-0 bg-accent/10 blur-3xl animate-pulse-slow -z-10"></div>
-            <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">
-              <span className="text-neutral-900">
-                Be Creative
-              </span>
-            </h1>
-          </div>
-        </motion.div>
-        
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-lg sm:text-xl md:text-2xl text-neutral-600 mb-8 sm:mb-12 px-4"
-        >
-          The world is better with Tech
-        </motion.p>
-
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <a
-            href="#about"
-            className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white font-medium rounded-lg hover:bg-accent-dark transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
-          >
-            Explore My Work
-            <svg
-              className="ml-2 w-5 h-5 animate-bounce"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
+        <div className="flex items-center justify-center min-h-screen">
+          {/* Initial Text - Center */}
+          {mounted && showInitialText && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </a>
-        </motion.div>
-      </div>
+              <div className="space-y-4">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+                  <span className="inline-block text-black">Be</span>{" "}
+                  <span className="inline-block relative">
+                    <span className="relative z-10 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
+                      Creative
+                    </span>
+                    <motion.span
+                      className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-2xl"
+                      animate={{
+                        opacity: [0.5, 1, 0.5],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                  </span>
+                </h1>
+                
+                <motion.div 
+                  className="max-w-2xl mx-auto"
+                  animate={{ opacity: showInitialText ? 1 : 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <TextGenerateEffect
+                    words="The world is better with Tech."
+                    className="text-lg sm:text-xl text-neutral-600 font-normal"
+                  />
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
 
+          {/* Profile Info - Left */}
+          {mounted && showProfile && (
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex items-center gap-8 max-w-4xl"
+            >
+              {/* Profile Image */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex-shrink-0"
+              >
+                <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
+                  <Image
+                    src="/images/profile_img.jpg"
+                    alt="Joe Kohzen (Yuzu)"
+                    fill
+                    className="object-cover rounded-3xl shadow-2xl"
+                    priority
+                  />
+                  {/* Decorative border */}
+                  <div className="absolute inset-0 rounded-3xl ring-4 ring-cyan-500/20" />
+                </div>
+              </motion.div>
+              
+              {/* Text Content */}
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-4xl md:text-5xl font-bold text-black mb-2">
+                    Joe Kohzen (Yuzu)
+                  </h2>
+                  <p className="text-xl text-cyan-600 font-medium">
+                    Developer · Designer · Creator
+                  </p>
+                </div>
+                
+                <div className="text-lg text-neutral-600 leading-relaxed">
+                  <TypewriterEffect
+                    words="Hello! As a first-year master's student pursuing computer science, I am specializing in intelligent robot using digital twin and world models. My academic journey is dedicated to exploring the intersection between technology and creativity."
+                    className="block"
+                    delay={0.5}
+                    speed={0.03}
+                  />
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </div>
+      </div>
     </section>
   )
 }
