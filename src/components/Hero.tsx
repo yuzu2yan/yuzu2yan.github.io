@@ -54,7 +54,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
-        <div className="flex items-center justify-center min-h-screen">
+        <div className="flex items-center justify-center min-h-screen pt-20">
           {/* Initial Text - Center */}
           {mounted && showInitialText && (
             <motion.div
@@ -101,31 +101,67 @@ export default function Hero() {
 
           {/* Profile Info - Left */}
           {mounted && showProfile && (
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex items-center gap-8 max-w-4xl"
-            >
-              {/* Profile Image */}
+            <div className="flex flex-col items-start gap-8">
+              {/* Overview and Introduction text */}
               <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex-shrink-0"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="space-y-1"
               >
-                <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
-                  <Image
-                    src="/images/profile_img.jpg"
-                    alt="Joe Kohzen (Yuzu)"
-                    fill
-                    className="object-cover rounded-3xl shadow-2xl"
-                    priority
-                  />
-                  {/* Decorative border */}
-                  <div className="absolute inset-0 rounded-3xl ring-4 ring-cyan-500/20" />
-                </div>
+                <p className="text-sm md:text-base lg:text-lg font-medium text-neutral-600">
+                  INTRODUCTION
+                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
+                  Overview.
+                </h1>
               </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="flex items-center gap-8 max-w-4xl"
+              >
+              {/* Profile Image and Resume Button */}
+              <div className="flex flex-col items-center gap-6">
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="flex-shrink-0"
+                >
+                  <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
+                    <Image
+                      src="/images/profile_img.jpg"
+                      alt="Joe Kohzen (Yuzu)"
+                      fill
+                      className="object-cover rounded-3xl shadow-2xl"
+                      priority
+                    />
+                    {/* Decorative border */}
+                    <div className="absolute inset-0 rounded-3xl ring-4 ring-cyan-500/20" />
+                  </div>
+                </motion.div>
+
+                {/* Resume Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  <a
+                    href="/data/Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-40 h-12 bg-cyan-400 text-white rounded-xl hover:bg-cyan-500 hover:shadow-lg hover:scale-105 transition-all duration-300"
+                  >
+                    <div className="w-full h-full flex items-center justify-center p-6">
+                      <span className="text-1xl font-medium">View My Resume</span>
+                    </div>
+                  </a>
+                </motion.div>
+              </div>
               
               {/* Text Content */}
               <div className="space-y-6">
@@ -147,7 +183,8 @@ export default function Hero() {
                   />
                 </div>
               </div>
-            </motion.div>
+              </motion.div>
+            </div>
           )}
         </div>
       </div>
