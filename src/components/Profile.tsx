@@ -47,28 +47,33 @@ const skillItems = skills.map(skill => ({
 
 export default function Profile() {
   return (
-    <section id="about" className="py-32 md:py-40 relative overflow-hidden">
+    <section id="about" className="pt-40 md:pt-48 lg:pt-56 pb-32 md:pb-40 relative overflow-hidden scroll-mt-16">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/30" />
       
       {/* Hexagon pattern overlay */}
       <HexagonPattern className="text-cyan-500 opacity-[0.03]" />
       
-      <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            About Me
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full" />
-        </motion.div>
+      <div className="relative w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center max-w-7xl mx-auto">
+          <div className="flex flex-col items-start gap-8 w-full max-w-4xl mt-20">
+            {/* Section Header - same as Hero Overview */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="space-y-1"
+            >
+              <p className="text-sm md:text-base lg:text-lg font-medium text-neutral-600">
+                WHAT I WORK WITH
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
+                Skills.
+              </h1>
+            </motion.div>
+          </div>
+        </div>
 
         {/* Skills Section */}
         <motion.div
@@ -78,46 +83,13 @@ export default function Profile() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-black mb-2">Technical Skills</h3>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <HoverEffect items={skillItems} />
           </div>
         </motion.div>
 
         {/* Career & Research Grid */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Career Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="group"
-          >
-            <div className="h-full bg-white rounded-2xl p-8 border border-neutral-200 hover:border-cyan-500 transition-colors">
-              <h3 className="text-xl font-bold text-black mb-3">Career & Education</h3>
-              <a
-                href="/data/CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-cyan-500 hover:text-cyan-600 font-medium group/link"
-              >
-                View My CV
-                <svg
-                  className="w-4 h-4 ml-1 transition-transform group-hover/link:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </motion.div>
-
           {/* Research Section */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
