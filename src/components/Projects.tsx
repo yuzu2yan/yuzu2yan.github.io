@@ -79,6 +79,13 @@ export default function Projects() {
           border-radius: 8px;
           box-shadow: 0 2px 4px rgba(0,0,0,0.05);
           transition: all 0.3s ease;
+          display: none;
+        }
+        @media (min-width: 768px) {
+          .works-swiper .swiper-button-prev,
+          .works-swiper .swiper-button-next {
+            display: flex;
+          }
         }
         .works-swiper .swiper-button-prev:hover,
         .works-swiper .swiper-button-next:hover {
@@ -112,19 +119,19 @@ export default function Projects() {
 
       <div className="relative w-full px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto">
-          <div className="flex flex-col items-start gap-8 w-full max-w-4xl">
+          <div className="flex flex-col items-center lg:items-start gap-8 w-full max-w-4xl">
             {/* Section Header - same as Skills */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-              className="space-y-1"
+              className="space-y-1 text-center lg:text-left w-full"
             >
               <p className="text-sm md:text-base lg:text-lg font-medium text-neutral-600">
                 MY WORKS
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black">
                 Projects.
               </h1>
             </motion.div>
@@ -140,7 +147,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full max-w-7xl mx-auto mt-16"
+          className="w-full max-w-7xl mx-auto mt-8 sm:mt-12 md:mt-16"
         >
           <Swiper
             spaceBetween={30}
@@ -185,7 +192,7 @@ export default function Projects() {
                   <div className="bg-white rounded-xl border border-neutral-200 group hover:shadow-xl transition-all duration-300 h-full">
                     <div style={{ padding: '16px 24px' }}>
                       {/* Image */}
-                      <div className="relative h-48 sm:h-56 overflow-hidden rounded-lg" style={{ margin: '-16px -24px 8px -24px' }}>
+                      <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden rounded-lg" style={{ margin: '-16px -24px 8px -24px' }}>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 rounded-lg"></div>
                         <Image
                           src={project.image}
@@ -202,7 +209,7 @@ export default function Projects() {
                       <div className="">
                         <div className="space-y-4">
                           {/* Title */}
-                          <h3 className="text-xl font-bold text-black">
+                          <h3 className="text-lg sm:text-xl font-bold text-black">
                             {project.title}
                           </h3>
                           
@@ -214,7 +221,7 @@ export default function Projects() {
                           )}
                           
                           {/* Description */}
-                          <p className="text-neutral-600 leading-relaxed">
+                          <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
                             {project.description}
                           </p>
                         </div>

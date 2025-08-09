@@ -14,20 +14,20 @@ export default function Research() {
       
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
-        <div className="flex items-center justify-center min-h-screen pt-20">
-          <div className="flex flex-col items-start gap-8">
+        <div className="flex items-center justify-center min-h-screen pt-20 pb-20">
+          <div className="flex flex-col items-center lg:items-start gap-8 w-full">
             {/* Header section */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-              className="space-y-1"
+              className="space-y-1 text-center lg:text-left w-full"
             >
               <p className="text-sm md:text-base lg:text-lg font-medium text-neutral-600">
                 MY ACADEMIC JOURNEY
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black">
                 Research.
               </h1>
             </motion.div>
@@ -39,55 +39,56 @@ export default function Research() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="w-full max-w-4xl"
+              style={{ paddingLeft: '16px', paddingRight: '16px' }}
             >
               <div className="space-y-12 md:space-y-16 lg:space-y-20">
                 {/* Research Interests */}
                 <div className="relative">
                   <div className="mb-8 md:mb-10">
-                    <h3 className="text-2xl md:text-3xl font-bold text-black">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black">
                       Research Interests
                     </h3>
                   </div>
                   
                   <div className="space-y-4">
-                    <p className="text-lg text-neutral-700 leading-relaxed">
-                      • <span className="font-semibold">Intelligent Robotics</span> - AI robots that can perceive, reason, and act autonomously in complex environments
-                    </p>
-                    <p className="text-lg text-neutral-700 leading-relaxed">
-                      • <span className="font-semibold">Digital Twin</span> - Replication of real-world in a virtual environment with especially 3D LiDAR sensor
-                    </p>
-                    <p className="text-lg text-neutral-700 leading-relaxed">
-                      • <span className="font-semibold">World Models</span> - AI's internal model for simulating and predicting outcomes, including unseen factors
-                    </p>
-                    <p className="text-lg text-neutral-700 leading-relaxed">
-                      • <span className="font-semibold">Robot Vision</span> - Computer vision for scene understanding and SLAM to enhance perception
-                    </p>
+                    <div className="text-base sm:text-lg text-neutral-700 leading-relaxed">
+                      <span className="font-semibold">• Intelligent Robotics -</span> AI robots that can perceive, reason, and act autonomously in complex environments
+                    </div>
+                    <div className="text-base sm:text-lg text-neutral-700 leading-relaxed">
+                      <span className="font-semibold">• Digital Twin -</span> Replication of real-world in a virtual environment with especially 3D LiDAR sensor
+                    </div>
+                    <div className="text-base sm:text-lg text-neutral-700 leading-relaxed">
+                      <span className="font-semibold">• World Models -</span> AI's internal model for simulating and predicting outcomes, including unseen factors
+                    </div>
+                    <div className="text-base sm:text-lg text-neutral-700 leading-relaxed">
+                      <span className="font-semibold">• Robot Vision -</span> Computer vision for scene understanding and SLAM to enhance perception
+                    </div>
                   </div>
                 </div>
 
                 {/* Current Research */}
                 <div className="relative">
                   <div className="mb-8 md:mb-10">
-                    <h3 className="text-2xl md:text-3xl font-bold text-black">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black">
                       Current Research
                     </h3>
                   </div>
                   
                   <div className="space-y-6">
-                    <h4 className="text-xl font-semibold text-black">
+                    <h4 className="text-lg sm:text-xl font-semibold text-black">
                       Autonomous Mobile-Sensor Placement System Using Deep Reinforcement Learning for Digital Twin Construction
                     </h4>
-                    <p className="text-lg text-neutral-700 leading-relaxed">
+                    <div className="text-base sm:text-lg text-neutral-700 leading-relaxed">
                       By enabling mobility in LiDAR-equipped robots, the system dynamically adjusted sensor positions to expand coverage, providing a practical and scalable solution for sensor placement in complex, changing urban environments.
-                    </p>
+                    </div>
                   </div>
-                  <div className="space-y-6">
-                    <h4 className="text-xl font-semibold text-black">
+                  <div className="space-y-6 mt-8">
+                    <h4 className="text-lg sm:text-xl font-semibold text-black">
                       World Model-Based Communication Prediction and Multi-Robot Coordination Enabled by Digital Twin
                     </h4>
-                    <p className="text-lg text-neutral-700 leading-relaxed">
+                    <div className="text-base sm:text-lg text-neutral-700 leading-relaxed">
                       Autonomous robotic systems using World Models for predictive communication and control, leveraging digital twins and multi-agent simulation to study adaptation in dynamic, networked environments.
-                    </p>
+                    </div>
                   </div>
                 </div>
               </div>

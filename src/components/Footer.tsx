@@ -32,7 +32,7 @@ export default function Footer() {
   }
 
   return (
-    <footer id="contact" className="relative bg-black text-white overflow-hidden py-20">
+    <footer id="contact" className="relative bg-black text-white overflow-hidden py-12 sm:py-16 md:py-20">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
@@ -53,7 +53,7 @@ export default function Footer() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h1 className="text-2xl md:text-3xl font-bold text-white">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                 Contact.
               </h1>
             </motion.div>
@@ -64,7 +64,7 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="flex justify-center items-center gap-4">
+              className="flex flex-wrap justify-center items-center gap-3 sm:gap-4">
             {socialLinks.map((link, index) => (
               <motion.a
                 key={link.href}
@@ -82,11 +82,11 @@ export default function Footer() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
                 className={cn(
-                  "relative group p-5 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 transition-all hover:bg-white/10 hover:border-cyan-500/50",
+                  "relative group p-4 sm:p-5 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 transition-all hover:bg-white/10 hover:border-cyan-500/50",
                   link.color
                 )}
               >
-                <link.icon className="w-8 h-8" />
+                <link.icon className="w-6 h-6 sm:w-8 sm:h-8" />
                 <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                   {link.label}
                 </span>
@@ -108,14 +108,14 @@ export default function Footer() {
               }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="relative group p-5 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 transition-all hover:bg-white/10 hover:border-cyan-500/50 hover:text-green-500"
+              className="relative group p-4 sm:p-5 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 transition-all hover:bg-white/10 hover:border-cyan-500/50 hover:text-green-500"
             >
               <Image
                 src="/images/qiita.png"
                 alt="Qiita"
                 width={32}
                 height={32}
-                className="w-8 h-8"
+                className="w-6 h-6 sm:w-8 sm:h-8"
               />
               <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                 Qiita
@@ -124,7 +124,7 @@ export default function Footer() {
             </motion.div>
 
             {/* Bottom Section */}
-            <div className="mt-12 w-full">
+            <div className="mt-8 sm:mt-10 md:mt-12 w-full">
               <div className="flex flex-col md:flex-row justify-between items-start gap-6">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -135,12 +135,12 @@ export default function Footer() {
                 >
                   <div className="relative">
                     <div className="absolute inset-0 bg-cyan-500 blur-md opacity-50"></div>
-                    <div className="relative w-10 h-10 bg-black rounded-lg flex items-center justify-center">
-                      <IconHeart className="w-5 h-5 text-cyan-400" />
+                    <div className="relative w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-lg flex items-center justify-center">
+                      <IconHeart className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
                     </div>
                   </div>
                   <div>
-                    <p className="text-sm text-neutral-300">Created by Yuzu</p>
+                    <p className="text-xs sm:text-sm text-neutral-300">Created by Yuzu</p>
                   </div>
                 </motion.div>
 
@@ -154,14 +154,14 @@ export default function Footer() {
                   whileHover={{ y: -2 }}
                   className="group flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-cyan-500/50 transition-all"
                   style={{ 
-                    padding: '8px 16px',
-                    marginTop: '-40px',
-                    marginRight: '20px'
+                    padding: '6px 12px',
+                    marginTop: '-20px',
+                    marginRight: '10px'
                   }}
                 >
-                  <span className="text-sm text-neutral-300 group-hover:text-cyan-400 transition-colors" style={{ padding: '0 4px' }}>Back to Top</span>
-                  <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
-                    <IconArrowUp className="w-4 h-4 text-cyan-400" />
+                  <span className="text-xs sm:text-sm text-neutral-300 group-hover:text-cyan-400 transition-colors" style={{ padding: '0 2px' }}>Back to Top</span>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
+                    <IconArrowUp className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
                   </div>
                 </motion.button>
               </div>
