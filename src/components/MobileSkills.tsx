@@ -1,0 +1,161 @@
+"use client"
+
+import { motion } from "framer-motion"
+import Image from "next/image"
+import { HexagonPattern } from "@/components/ui/geometric-lines"
+
+const skillCategories = {
+  Programming: [
+    { name: "HTML", image: "/images/html.png" },
+    { name: "CSS", image: "/images/css.png" },
+    { name: "JavaScript", image: "/images/js.png" },
+    { name: "TypeScript", image: "/images/ts.png" },
+    { name: "Dart", image: "/images/dart.png" },
+    { name: "PHP", image: "/images/php.png" },
+    { name: "Java", image: "/images/java.png" },
+    { name: "C", image: "/images/c.png" },
+    { name: "C++", image: "/images/c++.png" },
+    { name: "Rust", image: "/images/rust.png" },
+    { name: "Python", image: "/images/python.png" },
+  ],
+  Technologies: [
+    { name: "React", image: "/images/react.png" },
+    { name: "Node.js", image: "/images/nodejs.png" },
+    { name: "Next.js", image: "/images/nextjs.svg" },
+    { name: "Flutter", image: "/images/flutter.svg" },
+    { name: "ROS", image: "/images/ros.png" },
+    { name: "Arduino", image: "/images/arduino.png" },
+    { name: "Raspberry Pi", image: "/images/raspi.png" },
+    { name: "Autoware", image: "/images/autoware.png" },
+    { name: "OpenCV", image: "/images/opencv.svg" },
+    { name: "NS-3", image: "/images/ns-3.png" },
+    { name: "Unity", image: "/images/unity.svg" },
+    { name: "TensorFlow", image: "/images/tensorflow.png" },
+    { name: "PyTorch", image: "/images/pytorch.png" },
+    { name: "Hugging Face", image: "/images/huggingface.png" },
+    { name: "LangChain", image: "/images/langchain.svg" },
+    { name: "Omniverse", image: "/images/omniverse.png" },
+    { name: "AWS", image: "/images/aws.png" },
+    { name: "SQLite", image: "/images/sqlite.png" },
+    { name: "MySQL", image: "/images/mysql.svg" },
+    { name: "PostgreSQL", image: "/images/postgresql.png" },
+    { name: "Firebase", image: "/images/firebase.png" },
+    { name: "Supabase", image: "/images/supabase.png" },
+    { name: "MongoDB", image: "/images/mongodb.png" },
+    { name: "Pinecone", image: "/images/pinecone.svg" },
+    { name: "Git", image: "/images/git.png" },
+    { name: "Docker", image: "/images/docker.svg" },
+    { name: "Linux", image: "/images/linux.png" },
+  ],
+  Design: [
+    { name: "Figma", image: "/images/figma.png" },
+    { name: "Illustrator", image: "/images/illustrator.png" },
+    { name: "Photoshop", image: "/images/photoshop.png" },
+    { name: "Premiere Pro", image: "/images/premiere-pro.png" },
+    { name: "Canva", image: "/images/canva.png" },
+  ],
+}
+
+export default function MobileSkills() {
+  return (
+    <section id="about" className="min-h-screen relative overflow-hidden scroll-mt-20 md:hidden">
+      {/* Background layers */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/30" />
+        <HexagonPattern className="text-cyan-500 opacity-[0.03]" />
+      </div>
+      
+      {/* Content */}
+      <div className="relative z-10 px-4 w-full">
+        <div className="flex items-center justify-center min-h-screen" style={{ paddingTop: '70px' }}>
+          <div className="flex flex-col items-center gap-4">
+            {/* Header section */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="space-y-1 text-center"
+            >
+              <p className="text-sm font-medium text-neutral-600">
+                WHAT I WORK WITH
+              </p>
+              <h1 className="text-3xl font-bold text-black">
+                Skills.
+              </h1>
+            </motion.div>
+
+            {/* Skills content section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="w-full max-w-sm"
+            >
+              <div className="space-y-8">
+                {Object.entries(skillCategories).map(([category, skills], index) => (
+                  <div key={category} className="relative">
+                    {/* Category container */}
+                    <div className="mb-4">
+                      <h3 className="text-xl font-bold text-black text-center py-3">
+                        {category}
+                      </h3>
+                    </div>
+                    
+                    {/* Spacer div */}
+                    <div className="h-2"></div>
+                    
+                    {/* Skills grid container */}
+                    <div className="flex justify-center">
+                      <div className="inline-flex flex-wrap justify-center gap-2 max-w-xs">
+                        {skills.map((skill) => (
+                          <motion.div
+                            key={skill.name}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="group"
+                          >
+                            {/* Individual skill container */}
+                            <div className="flex flex-col items-center gap-0">
+                              {/* Icon wrapper */}
+                              <div className="relative p-1">
+                                <Image
+                                  src={skill.image}
+                                  alt={skill.name}
+                                  width={40}
+                                  height={40}
+                                  className="w-10 h-10 object-contain transition-all duration-300 group-hover:filter group-hover:brightness-110"
+                                />
+                                <div className="absolute inset-0 bg-cyan-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                              </div>
+                              {/* Skill name */}
+                              <span className="text-xs font-medium text-neutral-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                {skill.name}
+                              </span>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Category divider */}
+                    {index < Object.entries(skillCategories).length - 1 && (
+                      <div className="mt-6">
+                        <div className="flex items-center justify-center">
+                          <div className="h-px w-20 bg-gradient-to-r from-transparent via-cyan-500 to-cyan-500/30"></div>
+                          <div className="mx-3 w-2 h-2 rounded-full bg-cyan-500"></div>
+                          <div className="h-px w-20 bg-gradient-to-l from-transparent via-cyan-500 to-cyan-500/30"></div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
