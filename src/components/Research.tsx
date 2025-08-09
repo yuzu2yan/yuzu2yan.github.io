@@ -52,16 +52,16 @@ export default function Research() {
                   
                   <div className="space-y-4">
                     <div className="text-base sm:text-lg text-neutral-700 leading-relaxed">
-                      <span className="font-semibold">• Intelligent Robotics -</span> AI robots that can perceive, reason, and act autonomously in complex environments
+                      <span className="font-semibold">• Intelligent Robotics</span><span className="hidden sm:inline"> - AI robots that can perceive, reason, and act autonomously in complex environments</span>
                     </div>
                     <div className="text-base sm:text-lg text-neutral-700 leading-relaxed">
-                      <span className="font-semibold">• Digital Twin -</span> Replication of real-world in a virtual environment with especially 3D LiDAR sensor
+                      <span className="font-semibold">• Digital Twin</span><span className="hidden sm:inline"> - Replication of real-world in a virtual environment with especially 3D LiDAR sensor</span>
                     </div>
                     <div className="text-base sm:text-lg text-neutral-700 leading-relaxed">
-                      <span className="font-semibold">• World Models -</span> AI's internal model for simulating and predicting outcomes, including unseen factors
+                      <span className="font-semibold">• World Models</span><span className="hidden sm:inline"> - AI's internal model for simulating and predicting outcomes, including unseen factors</span>
                     </div>
                     <div className="text-base sm:text-lg text-neutral-700 leading-relaxed">
-                      <span className="font-semibold">• Robot Vision -</span> Computer vision for scene understanding and SLAM to enhance perception
+                      <span className="font-semibold">• Robot Vision</span><span className="hidden sm:inline"> - Computer vision for scene understanding and SLAM to enhance perception</span>
                     </div>
                   </div>
                 </div>

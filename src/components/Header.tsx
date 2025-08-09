@@ -39,7 +39,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center" style={{ marginLeft: '40px', gap: '12px' }}>
+            <Link href="/" className="flex items-center" style={{ marginLeft: '16px', gap: '12px' }}>
               <Image
                 src="/images/penguin.png"
                 alt="Yuzu Logo"
@@ -76,7 +76,8 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-black hover:bg-neutral-100 rounded-lg transition-colors"
+            className="md:hidden p-3 text-black hover:bg-neutral-100 rounded-lg transition-colors"
+            style={{ marginRight: '16px' }}
           >
             <AnimatePresence mode="wait">
               {isMenuOpen ? (
@@ -87,7 +88,7 @@ export default function Header() {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <IconX size={24} />
+                  <IconX size={32} />
                 </motion.div>
               ) : (
                 <motion.div
@@ -97,7 +98,7 @@ export default function Header() {
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <IconMenu2 size={24} />
+                  <IconMenu2 size={32} />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -105,29 +106,46 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - Below hamburger */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.nav
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border-t border-neutral-200"
-          >
-            <div className="px-4 py-4 space-y-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block px-4 py-3 text-base font-medium text-neutral-600 hover:text-black hover:bg-neutral-50 rounded-lg transition-all"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </motion.nav>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/30 md:hidden z-40"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            
+            {/* Drop-down Menu */}
+            <motion.nav
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ type: 'spring', damping: 20, stiffness: 300 }}
+              className="fixed top-20 right-4 h-auto w-32 bg-gradient-to-br from-cyan-50 via-white to-purple-50 shadow-2xl md:hidden z-50 rounded-3xl overflow-hidden border-2 border-cyan-100"
+            >
+              <div style={{ paddingTop: '20px', paddingBottom: '20px', paddingLeft: '12px', paddingRight: '12px' }}>
+                {/* Navigation items */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block text-lg font-semibold text-neutral-700 hover:text-black hover:bg-white/70 rounded-xl transition-all text-center"
+                      style={{ paddingTop: '8px', paddingBottom: '8px', paddingLeft: '4px', paddingRight: '4px' }}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
     </header>
