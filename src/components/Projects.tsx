@@ -25,7 +25,7 @@ const projects = [
     title: "ARLISS 2024",
     description: "We developed CanSat, a mock-up satellite, and participated in a satellite launch experiment in Nevada, USA",
     color: "from-blue-400 to-indigo-600",
-    image: "/images/arliss2024.jpg",
+    image: "/images/arliss2024.png",
     link: "https://github.com/yuzu2yan/ARLISS2024",
   },
   {
@@ -43,6 +43,13 @@ const projects = [
     color: "from-green-400 to-teal-600",
     image: "/images/tanegashima-mission.jpg",
     link: "https://github.com/yuzu2yan/Tanegashima_Rocket_Contest_2024_Mission",
+  },
+  {
+    title: "Noshiro Space Event 2023",
+    description: "This project involves dropping a robot from the sky and, after landing, aiming for a zero-distance goal through autonomous control.",
+    color: "from-green-400 to-teal-600",
+    image: "/images/noshiro.jpg",
+    link: "https://github.com/yuzu2yan/Noshiro_Space_Event_2023",
   }
 ]
 
@@ -124,6 +131,9 @@ export default function Projects() {
           </div>
         </div>
 
+        {/* Spacer div */}
+        <div className="h-8 md:h-12"></div>
+
         {/* Projects Carousel */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -175,7 +185,7 @@ export default function Projects() {
                   <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden group hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                     {/* Image */}
                     <div className="relative h-48 sm:h-56 overflow-hidden bg-neutral-100">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -185,27 +195,38 @@ export default function Projects() {
                     </div>
                     
                     {/* Content */}
-                    <div className="p-6 flex-1 flex flex-col">
-                      {/* Title */}
-                      <h3 className="text-xl font-bold text-black mb-3">
-                        {project.title}
-                      </h3>
+                    <div className="p-8 flex-1 flex flex-col">
+                      <div className="space-y-4">
+                        {/* Title */}
+                        <h3 className="text-xl font-bold text-black">
+                          {project.title}
+                        </h3>
+                        
+                        {/* Award */}
+                        {project.award && (
+                          <p className="text-sm font-semibold text-amber-600">
+                            🏆 {project.award}
+                          </p>
+                        )}
+                        
+                        {/* Description */}
+                        <p className="text-neutral-600 leading-relaxed">
+                          {project.description}
+                        </p>
+                      </div>
                       
-                      {/* Description */}
-                      <p className="text-neutral-600 mb-6 flex-1">
-                        {project.description}
-                      </p>
-                                            
-                      {/* Link */}
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-cyan-500 hover:text-cyan-600 font-medium group/link"
-                      >
-                        View Project
-                        <IconExternalLink className="w-4 h-4 ml-1 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
-                      </a>
+                      <div className="mt-auto pt-6">
+                        {/* Link */}
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-cyan-500 hover:text-cyan-600 font-medium group/link"
+                        >
+                          View Project
+                          <IconExternalLink className="w-4 h-4 ml-1 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
