@@ -66,24 +66,26 @@ export default function DesktopSkills() {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex items-center justify-center min-h-screen pt-40">
-          <div className="flex flex-col items-start gap-8">
+          <div className="flex flex-col gap-8 items-center">
             {/* Header section */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="space-y-1"
-            >
-              <p className="text-sm md:text-base lg:text-lg font-medium text-neutral-600">
-                WHAT I WORK WITH
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
-                Skills.
-              </h1>
-            </motion.div>
+            <div className="w-full max-w-4xl">
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="space-y-1"
+              >
+                <p className="text-sm md:text-base lg:text-lg font-medium text-neutral-600">
+                  WHAT I WORK WITH
+                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
+                  Skills.
+                </h1>
+              </motion.div>
+            </div>
 
             {/* Skills content section */}
             <motion.div

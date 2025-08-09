@@ -111,8 +111,8 @@ export default function DesktopProjects() {
       `}</style>
 
       <div className="relative w-full px-4 sm:px-6 lg:px-8 py-20">
-        <div className="flex flex-col items-center justify-center max-w-7xl mx-auto">
-          <div className="flex flex-col items-start gap-8 w-full max-w-4xl">
+        <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col gap-8 w-full max-w-4xl">
             {/* Section Header - same as Skills */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -140,7 +140,7 @@ export default function DesktopProjects() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full max-w-7xl mx-auto mt-16"
+          className="w-full mt-16"
         >
           <Swiper
             spaceBetween={30}
