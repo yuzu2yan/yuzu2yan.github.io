@@ -67,20 +67,20 @@ export default function Skills() {
       
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
-        <div className="flex items-center justify-center min-h-screen pt-20 pb-20">
-          <div className="flex flex-col items-center lg:items-start gap-8 w-full">
+        <div className="flex items-center justify-center min-h-screen pt-40">
+          <div className="flex flex-col items-start gap-8">
             {/* Header section */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-              className="space-y-1 text-center lg:text-left w-full"
+              className="space-y-1"
             >
               <p className="text-sm md:text-base lg:text-lg font-medium text-neutral-600">
                 WHAT I WORK WITH
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
                 Skills.
               </h1>
             </motion.div>
@@ -92,14 +92,13 @@ export default function Skills() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="w-full max-w-4xl"
-              style={{ paddingLeft: '16px', paddingRight: '16px' }}
             >
               <div className="space-y-12 md:space-y-16 lg:space-y-20">
                 {Object.entries(skillCategories).map(([category, skills], index) => (
                   <div key={category} className="relative">
                     {/* Category container */}
-                    <div className="mb-8 sm:mb-12 md:mb-16">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black text-center py-2 sm:py-4">
+                    <div className="mb-20 md:mb-24">
+                      <h3 className="text-2xl md:text-3xl font-bold text-black text-center py-4">
                         {category}
                       </h3>
                     </div>
@@ -109,7 +108,7 @@ export default function Skills() {
                     
                     {/* Skills grid container */}
                     <div className="flex justify-center">
-                      <div className="inline-flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 max-w-[55rem]">
+                      <div className="inline-flex flex-wrap justify-center gap-2 md:gap-3 max-w-[55rem]">
                         {skills.map((skill) => (
                           <motion.div
                             key={skill.name}
@@ -126,7 +125,7 @@ export default function Skills() {
                                   alt={skill.name}
                                   width={60}
                                   height={60}
-                                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain transition-all duration-300 group-hover:filter group-hover:brightness-110"
+                                  className="w-12 h-12 md:w-14 md:h-14 object-contain transition-all duration-300 group-hover:filter group-hover:brightness-110"
                                 />
                                 <div className="absolute inset-0 bg-cyan-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                               </div>
