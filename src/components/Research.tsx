@@ -54,13 +54,13 @@ export default function Research() {
                       • Intelligent Robotics - 
                     </p>
                     <p className="text-lg text-neutral-700 leading-relaxed">
-                      • Digital Twin - Developing perception systems for real-world applications
+                      • Digital Twin - 
                     </p>
                     <p className="text-lg text-neutral-700 leading-relaxed">
-                      • World Models - Creating intelligent agents that can operate independently
+                      • World Models - 
                     </p>
                     <p className="text-lg text-neutral-700 leading-relaxed">
-                      • Human-Robot Interaction - Designing intuitive interfaces between humans and machines
+                      • Robot Vision - 
                     </p>
                   </div>
                 </div>
@@ -73,6 +73,17 @@ export default function Research() {
                     </h3>
                   </div>
                   
+                  <div className="space-y-6">
+                    <h4 className="text-xl font-semibold text-black">
+                      Robot Control Digital-Twin Using Deep Reinforcement Learning
+                    </h4>
+                    <p className="text-lg text-neutral-700 leading-relaxed">
+                      Developing intelligent robotic control systems that leverage digital twin technology 
+                      and deep reinforcement learning for enhanced decision-making and adaptability. This research 
+                      focuses on creating virtual representations of physical robots that can be used to train 
+                      and optimize control policies in simulated environments before deployment.
+                    </p>
+                  </div>
                   <div className="space-y-6">
                     <h4 className="text-xl font-semibold text-black">
                       Robot Control Digital-Twin Using Deep Reinforcement Learning
