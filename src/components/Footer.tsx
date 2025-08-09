@@ -32,7 +32,7 @@ export default function Footer() {
   }
 
   return (
-    <footer id="contact" className="relative bg-black text-white overflow-hidden py-12 sm:py-16 md:py-20">
+    <footer id="contact" className="relative bg-black text-white overflow-hidden py-8 sm:py-12 md:py-16">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
@@ -124,14 +124,16 @@ export default function Footer() {
             </motion.div>
 
             {/* Bottom Section */}
-            <div className="mt-8 sm:mt-10 md:mt-12 w-full">
-              <div className="flex flex-col md:flex-row justify-between items-start gap-6">
+            <div className="mt-6 sm:mt-8 md:mt-10 w-full">
+              <div className="flex justify-between items-start">
+                {/* Created by Yuzu */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                   className="flex items-center gap-3"
+                  style={{ marginTop: '8px' }}
                 >
                   <div className="relative">
                     <div className="absolute inset-0 bg-cyan-500 blur-md opacity-50"></div>
@@ -143,7 +145,7 @@ export default function Footer() {
                     <p className="text-xs sm:text-sm text-neutral-300">Created by Yuzu</p>
                   </div>
                 </motion.div>
-
+                
                 {/* Back to Top Button */}
                 <motion.button
                   onClick={scrollToTop}
@@ -154,9 +156,7 @@ export default function Footer() {
                   whileHover={{ y: -2 }}
                   className="group flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-cyan-500/50 transition-all"
                   style={{ 
-                    padding: '6px 12px',
-                    marginTop: '-20px',
-                    marginRight: '10px'
+                    padding: '6px 12px'
                   }}
                 >
                   <span className="text-xs sm:text-sm text-neutral-300 group-hover:text-cyan-400 transition-colors" style={{ padding: '0 2px' }}>Back to Top</span>
