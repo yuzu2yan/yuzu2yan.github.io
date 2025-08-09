@@ -13,9 +13,9 @@ export default function MobileResearch() {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 px-4 w-full">
+      <div className="relative z-10 w-full" style={{ paddingLeft: '24px', paddingRight: '24px' }}>
         <div className="flex items-center justify-center min-h-screen pt-20">
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-8 w-full">
             {/* Header section */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -44,7 +44,7 @@ export default function MobileResearch() {
                 {/* Research Interests */}
                 <div className="relative">
                   <div className="mb-6">
-                    <h3 className="text-xl font-bold text-black text-center">
+                    <h3 className="text-xl font-bold text-black">
                       Research Interests
                     </h3>
                   </div>
@@ -68,18 +68,26 @@ export default function MobileResearch() {
                 {/* Current Research */}
                 <div className="relative">
                   <div className="mb-6">
-                    <h3 className="text-xl font-bold text-black text-center">
+                    <h3 className="text-xl font-bold text-black">
                       Current Research
                     </h3>
                   </div>
                   
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold text-black">
-                      Robot Control Digital-Twin Using Deep Reinforcement Learning
+                      Autonomous Mobile-Sensor Placement System Using Deep Reinforcement Learning for Digital Twin Construction
                     </h4>
                     <p className="text-base text-neutral-700 leading-relaxed">
-                      Developing intelligent robotic control systems that leverage digital twin technology 
-                      and deep reinforcement learning for enhanced decision-making and adaptability.
+                      By enabling mobility in LiDAR-equipped robots, the system dynamically adjusted sensor positions to expand coverage, providing a practical and scalable solution for sensor placement in complex, changing urban environments.
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-4 mt-6">
+                    <h4 className="text-lg font-semibold text-black">
+                      World Model-Based Communication Prediction and Multi-Robot Coordination Enabled by Digital Twin
+                    </h4>
+                    <p className="text-base text-neutral-700 leading-relaxed">
+                      Autonomous robotic systems using World Models for predictive communication and control, leveraging digital twins and multi-agent simulation to study adaptation in dynamic, networked environments.
                     </p>
                   </div>
                 </div>

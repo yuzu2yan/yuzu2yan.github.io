@@ -195,37 +195,40 @@ export default function DesktopProjects() {
                     </div>
                     
                     {/* Content */}
-                    <div className="p-8 flex-1 flex flex-col">
-                      <div className="space-y-4">
-                        {/* Title */}
-                        <h3 className="text-xl font-bold text-black">
-                          {project.title}
-                        </h3>
-                        
-                        {/* Award */}
-                        {project.award && (
-                          <p className="text-sm font-semibold text-amber-600">
-                            🏆 {project.award}
+                    <div style={{ padding: '10px 18px' }}>
+                      {/* Inner content wrapper */}
+                      <div className="">
+                        <div className="space-y-4">
+                          {/* Title */}
+                          <h3 className="text-xl font-bold text-black">
+                            {project.title}
+                          </h3>
+                          
+                          {/* Award */}
+                          {project.award && (
+                            <p className="text-sm font-semibold text-amber-600">
+                              🏆 {project.award}
+                            </p>
+                          )}
+                          
+                          {/* Description */}
+                          <p className="text-neutral-600 leading-relaxed">
+                            {project.description}
                           </p>
-                        )}
+                        </div>
                         
-                        {/* Description */}
-                        <p className="text-base text-neutral-600 leading-relaxed">
-                          {project.description}
-                        </p>
-                      </div>
-                      
-                      <div className="mt-auto pt-6">
-                        {/* Link */}
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center text-cyan-500 hover:text-cyan-600 font-medium group/link"
-                        >
-                          View Project
-                          <IconExternalLink className="w-4 h-4 ml-1 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
-                        </a>
+                        <div className="mt-6">
+                          {/* Link */}
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-cyan-500 hover:text-cyan-600 font-medium group/link"
+                          >
+                            View Project
+                            <IconExternalLink className="w-4 h-4 ml-1 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>

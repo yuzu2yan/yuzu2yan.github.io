@@ -120,8 +120,7 @@ export default function MobileProjects() {
             centeredSlides={true}
             grabCursor={true}
             freeMode={{
-              enabled: true,
-              sticky: true,
+              enabled: false,
             }}
             pagination={{ 
               clickable: true,
@@ -129,6 +128,9 @@ export default function MobileProjects() {
             }}
             modules={[Pagination, FreeMode]}
             className="mobile-works-swiper"
+            threshold={5}
+            resistanceRatio={0.85}
+            speed={300}
           >
             {projects.map((project, index) => (
               <SwiperSlide key={index}>
@@ -149,8 +151,10 @@ export default function MobileProjects() {
                     </div>
                     
                     {/* Content */}
-                    <div className="p-4 flex-1 flex flex-col">
-                      <div className="space-y-3">
+                    <div style={{ padding: '12px 16px' }}>
+                      {/* Inner content wrapper */}
+                      <div className="">
+                        <div className="space-y-3">
                         {/* Title */}
                         <h3 className="text-lg font-bold text-black">
                           {project.title}
@@ -167,19 +171,20 @@ export default function MobileProjects() {
                         <p className="text-sm text-neutral-600 leading-relaxed">
                           {project.description}
                         </p>
-                      </div>
-                      
-                      <div className="mt-auto pt-4">
-                        {/* Link */}
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center text-cyan-500 hover:text-cyan-600 font-medium group/link text-sm"
-                        >
-                          View Project
-                          <IconExternalLink className="w-3 h-3 ml-1 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
-                        </a>
+                        </div>
+                        
+                        <div className="mt-4">
+                          {/* Link */}
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-cyan-500 hover:text-cyan-600 font-medium group/link text-sm"
+                          >
+                            View Project
+                            <IconExternalLink className="w-3 h-3 ml-1 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
