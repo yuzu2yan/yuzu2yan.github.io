@@ -46,7 +46,7 @@ const projects = [
   }
 ]
 
-export default function Works() {
+export default function Projects() {
   return (
     <section id="works" className="py-32 md:py-40 relative overflow-hidden">
       {/* Gradient background */}
@@ -103,19 +103,26 @@ export default function Works() {
         }
       `}</style>
 
-      <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Recent Works
-          </h2>
-        </motion.div>
+      <div className="relative w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center max-w-7xl mx-auto">
+          <div className="flex flex-col items-start gap-8 w-full max-w-4xl">
+            {/* Section Header - same as Skills */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="space-y-1"
+            >
+              <p className="text-sm md:text-base lg:text-lg font-medium text-neutral-600">
+                MY WORKS
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
+                Projects.
+              </h1>
+            </motion.div>
+          </div>
+        </div>
 
         {/* Projects Carousel */}
         <motion.div
@@ -123,6 +130,7 @@ export default function Works() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="w-full max-w-7xl mx-auto mt-16"
         >
           <Swiper
             spaceBetween={30}

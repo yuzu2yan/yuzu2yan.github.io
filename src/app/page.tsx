@@ -1,7 +1,8 @@
 import Header from "@/components/Header"
-import Hero from "@/components/Hero"
 import Profile from "@/components/Profile"
-import Works from "@/components/Works"
+import Skills from "@/components/Skills"
+import Research from "@/components/Research"
+import Projects from "@/components/Projects"
 import Footer from "@/components/Footer"
 import LoadingAnimation from "@/components/LoadingAnimation"
 
@@ -12,9 +13,10 @@ export default function Home() {
       <div className="min-h-screen">
         <Header />
         <main>
-          <Hero />
           <Profile />
-          <Works />
+          <Skills />
+          <Research />
+          <Projects />
         </main>
         <Footer />
       </div>
