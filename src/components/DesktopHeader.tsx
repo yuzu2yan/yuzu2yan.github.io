@@ -34,6 +34,7 @@ export default function DesktopHeader() {
       )}
     >
       <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="md:mx-8 lg:mx-0">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
@@ -70,6 +71,7 @@ export default function DesktopHeader() {
               </Link>
             ))}
           </nav>
+        </div>
         </div>
       </div>
     </header>

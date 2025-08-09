@@ -39,6 +39,14 @@ export default function DesktopProfile() {
 
   return (
     <section id="profile" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-24 hidden md:flex">
+      <style jsx>{`
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .tablet-padding {
+            padding-left: 48px !important;
+            padding-right: 48px !important;
+          }
+        }
+      `}</style>
       {/* Background animations */}
       {mounted && (
         <>
@@ -53,7 +61,7 @@ export default function DesktopProfile() {
       )}
 
       {/* Content */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto tablet-padding">
         <div className="flex items-center justify-center min-h-screen pt-20">
           <div className="flex flex-col items-start gap-8">
             {/* Initial Text - Center */}

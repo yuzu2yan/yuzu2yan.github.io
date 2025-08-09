@@ -108,9 +108,15 @@ export default function DesktopProjects() {
           width: 24px;
           border-radius: 4px;
         }
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .tablet-padding {
+            padding-left: 48px !important;
+            padding-right: 48px !important;
+          }
+        }
       `}</style>
 
-      <div className="relative w-full px-4 sm:px-6 lg:px-8" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 tablet-padding" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
         <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col gap-8 w-full max-w-4xl">
             {/* Section Header - same as Skills */}

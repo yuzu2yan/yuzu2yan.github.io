@@ -59,6 +59,14 @@ const skillCategories = {
 export default function DesktopSkills() {
   return (
     <section id="about" className="min-h-screen relative overflow-hidden scroll-mt-20 hidden md:block">
+      <style jsx>{`
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .tablet-padding {
+            padding-left: 48px !important;
+            padding-right: 48px !important;
+          }
+        }
+      `}</style>
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/30" />
@@ -66,7 +74,7 @@ export default function DesktopSkills() {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full tablet-padding">
         <div className="flex items-center justify-center min-h-screen pt-32">
           <div className="flex flex-col gap-8 items-center">
             {/* Header section */}
