@@ -124,8 +124,8 @@ export default function Footer() {
             </motion.div>
 
             {/* Bottom Section */}
-            <div className="mt-16 w-full">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="mt-12 w-full">
+              <div className="flex flex-col md:flex-row justify-between items-start gap-6">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -152,9 +152,14 @@ export default function Footer() {
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -2 }}
-                  className="group flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-cyan-500/50 transition-all"
+                  className="group flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-cyan-500/50 transition-all"
+                  style={{ 
+                    padding: '8px 16px',
+                    marginTop: '-40px',
+                    marginRight: '20px'
+                  }}
                 >
-                  <span className="text-sm text-neutral-300 group-hover:text-cyan-400 transition-colors">Back to Top</span>
+                  <span className="text-sm text-neutral-300 group-hover:text-cyan-400 transition-colors" style={{ padding: '0 4px' }}>Back to Top</span>
                   <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
                     <IconArrowUp className="w-4 h-4 text-cyan-400" />
                   </div>
