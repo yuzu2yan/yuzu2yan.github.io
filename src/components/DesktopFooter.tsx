@@ -40,7 +40,7 @@ export default function DesktopFooter() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex flex-col items-center gap-4">
             {/* Spacer div */}
             <div className="h-4 md:h-6"></div>
@@ -125,13 +125,14 @@ export default function DesktopFooter() {
 
             {/* Bottom Section */}
             <div className="mt-16 w-full">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-6 relative" style={{ paddingRight: '40px' }}>
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                   className="flex items-center gap-3"
+                  style={{ marginLeft: '20px' }}
                 >
                   <div className="relative">
                     <div className="absolute inset-0 bg-cyan-500 blur-md opacity-50"></div>
@@ -152,7 +153,8 @@ export default function DesktopFooter() {
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -2 }}
-                  className="group flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-cyan-500/50 transition-all"
+                  className="group flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-cyan-500/50 transition-all absolute"
+                  style={{ padding: '10px 20px', top: '-50px', right: '20px' }}
                 >
                   <span className="text-sm text-neutral-300 group-hover:text-cyan-400 transition-colors">Back to Top</span>
                   <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">

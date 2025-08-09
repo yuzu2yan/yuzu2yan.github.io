@@ -49,6 +49,7 @@ export default function MobileFooter() {
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
               className="text-center"
+              style={{ marginTop: '20px' }}
             >
               <h1 className="text-2xl font-bold text-white">
                 Contact.
@@ -116,10 +117,10 @@ export default function MobileFooter() {
 
             {/* Bottom Section */}
             <div className="mt-8 w-full">
-              <div className="flex flex-col items-center gap-6">
+              <div className="flex justify-between items-center">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                   className="flex items-center gap-2"
@@ -138,12 +139,13 @@ export default function MobileFooter() {
                 {/* Back to Top Button */}
                 <motion.button
                   onClick={scrollToTop}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -2 }}
-                  className="group flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-cyan-500/50 transition-all"
+                  className="group flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-cyan-500/50 transition-all"
+                  style={{ padding: '6px 12px', marginTop: '-8px', marginRight: '8px' }}
                 >
                   <span className="text-xs text-neutral-300 group-hover:text-cyan-400 transition-colors">Back to Top</span>
                   <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
