@@ -180,7 +180,7 @@ export default function Profile() {
                     words="Hello! As a first-year master's student pursuing computer science, I am specializing in intelligent robot using digital twin and world models. My academic journey is dedicated to exploring the intersection between technology and creativity."
                     className="block"
                     delay={0.5}
-                    speed={0.03}
+                    speed={0.02}
                   />
                 </div>
               </div>

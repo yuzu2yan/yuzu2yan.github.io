@@ -8,7 +8,7 @@ export default function LoadingAnimation() {
   const [showYuzuLab, setShowYuzuLab] = useState(false)
 
   useEffect(() => {
-    // Show YUZU LAB after 1.5 seconds
+    // Show YUZU PORTFOLIO after 1.5 seconds
     const yuzuTimer = setTimeout(() => {
       setShowYuzuLab(true)
     }, 1500)
@@ -72,21 +72,33 @@ export default function LoadingAnimation() {
               className="absolute inset-0 flex items-center justify-center"
             >
               <div className="text-center">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent animate-quick-blink mb-2">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent mb-2">
                   WELCOME TO
                 </h1>
-                <AnimatePresence>
-                  {showYuzuLab && (
-                    <motion.h1
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4 }}
-                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent animate-pulse"
-                    >
-                      YUZU LAB.
-                    </motion.h1>
-                  )}
-                </AnimatePresence>
+                <div className="h-10 sm:h-12 md:h-14">
+                  <AnimatePresence>
+                    {showYuzuLab && (
+                      <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ 
+                          opacity: [0, 1, 0, 1, 0, 1],
+                          y: 0
+                        }}
+                        transition={{ 
+                          opacity: {
+                            duration: 0.9,
+                            times: [0, 0.15, 0.3, 0.5, 0.7, 1],
+                            ease: "easeInOut"
+                          },
+                          y: { duration: 0.4 }
+                        }}
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent whitespace-nowrap"
+                      >
+                        YUZU PORTFOLIO.
+                      </motion.h1>
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
             </motion.div>
           </div>

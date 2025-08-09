@@ -13,7 +13,7 @@ const socialLinks = [
     color: "hover:text-red-500"
   },
   {
-    href: "https://www.linkedin.com/in/joe-kohzen-2626872b6",
+    href: "https://www.linkedin.com/in/yuzu2yan",
     icon: IconBrandLinkedin,
     label: "LinkedIn",
     color: "hover:text-blue-600"

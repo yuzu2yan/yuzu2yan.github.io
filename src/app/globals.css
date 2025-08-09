@@ -60,12 +60,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1890ff;
+  background: #06b6d4;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0050b3;
+  background: #1890ff;
 }
 
 /* Selection */

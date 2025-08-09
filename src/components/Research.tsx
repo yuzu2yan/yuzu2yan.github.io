@@ -51,16 +51,16 @@ export default function Research() {
                   
                   <div className="space-y-4">
                     <p className="text-lg text-neutral-700 leading-relaxed">
-                      • Intelligent Robotics - 
+                      • <span className="font-semibold">Intelligent Robotics</span> - AI robots that can perceive, reason, and act autonomously in complex environments
                     </p>
                     <p className="text-lg text-neutral-700 leading-relaxed">
-                      • Digital Twin - 
+                      • <span className="font-semibold">Digital Twin</span> - Replication of real-world in a virtual environment with especially 3D LiDAR sensor
                     </p>
                     <p className="text-lg text-neutral-700 leading-relaxed">
-                      • World Models - 
+                      • <span className="font-semibold">World Models</span> - AI's internal model for simulating and predicting outcomes, including unseen factors
                     </p>
                     <p className="text-lg text-neutral-700 leading-relaxed">
-                      • Robot Vision - 
+                      • <span className="font-semibold">Robot Vision</span> - Computer vision for scene understanding and SLAM to enhance perception
                     </p>
                   </div>
                 </div>
@@ -75,24 +75,18 @@ export default function Research() {
                   
                   <div className="space-y-6">
                     <h4 className="text-xl font-semibold text-black">
-                      Robot Control Digital-Twin Using Deep Reinforcement Learning
+                      Autonomous Mobile-Sensor Placement System Using Deep Reinforcement Learning for Digital Twin Construction
                     </h4>
                     <p className="text-lg text-neutral-700 leading-relaxed">
-                      Developing intelligent robotic control systems that leverage digital twin technology 
-                      and deep reinforcement learning for enhanced decision-making and adaptability. This research 
-                      focuses on creating virtual representations of physical robots that can be used to train 
-                      and optimize control policies in simulated environments before deployment.
+                      By enabling mobility in LiDAR-equipped robots, the system dynamically adjusted sensor positions to expand coverage, providing a practical and scalable solution for sensor placement in complex, changing urban environments.
                     </p>
                   </div>
                   <div className="space-y-6">
                     <h4 className="text-xl font-semibold text-black">
-                      Robot Control Digital-Twin Using Deep Reinforcement Learning
+                      World Model-Based Communication Prediction and Multi-Robot Coordination Enabled by Digital Twin
                     </h4>
                     <p className="text-lg text-neutral-700 leading-relaxed">
-                      Developing intelligent robotic control systems that leverage digital twin technology 
-                      and deep reinforcement learning for enhanced decision-making and adaptability. This research 
-                      focuses on creating virtual representations of physical robots that can be used to train 
-                      and optimize control policies in simulated environments before deployment.
+                      Autonomous robotic systems using World Models for predictive communication and control, leveraging digital twins and multi-agent simulation to study adaptation in dynamic, networked environments.
                     </p>
                   </div>
                 </div>
