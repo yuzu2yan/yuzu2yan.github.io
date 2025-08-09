@@ -36,7 +36,7 @@ const skillCategories = {
 
 export default function Skills() {
   return (
-    <section id="about" className="min-h-screen relative overflow-hidden scroll-mt-16">
+    <section id="about" className="min-h-screen relative overflow-hidden scroll-mt-0">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/30" />
@@ -45,7 +45,7 @@ export default function Skills() {
       
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
-        <div className="flex items-center justify-center min-h-screen pt-20">
+        <div className="flex items-center justify-center min-h-screen pt-40">
           <div className="flex flex-col items-start gap-8">
             {/* Header section */}
             <motion.div
@@ -71,19 +71,22 @@ export default function Skills() {
               viewport={{ once: true }}
               className="w-full max-w-4xl"
             >
-              <div className="space-y-16 md:space-y-20 lg:space-y-24">
+              <div className="space-y-12 md:space-y-16 lg:space-y-20">
                 {Object.entries(skillCategories).map(([category, skills], index) => (
                   <div key={category} className="relative">
                     {/* Category container */}
-                    <div className="mb-8 md:mb-10">
-                      <h3 className="text-2xl md:text-3xl font-bold text-black text-center">
+                    <div className="mb-20 md:mb-24">
+                      <h3 className="text-2xl md:text-3xl font-bold text-black text-center py-4">
                         {category}
                       </h3>
                     </div>
                     
+                    {/* Spacer div */}
+                    <div className="h-4 md:h-6"></div>
+                    
                     {/* Skills grid container */}
                     <div className="flex justify-center">
-                      <div className="inline-flex flex-wrap justify-center gap-6 md:gap-8 max-w-[44rem]">
+                      <div className="inline-flex flex-wrap justify-center gap-3 md:gap-4 max-w-[44rem]">
                         {skills.map((skill) => (
                           <motion.div
                             key={skill.name}
@@ -92,7 +95,7 @@ export default function Skills() {
                             className="group"
                           >
                             {/* Individual skill container */}
-                            <div className="flex flex-col items-center gap-3">
+                            <div className="flex flex-col items-center gap-0">
                               {/* Icon wrapper */}
                               <div className="relative p-2">
                                 <Image
@@ -116,11 +119,11 @@ export default function Skills() {
                     
                     {/* Category divider */}
                     {index < Object.entries(skillCategories).length - 1 && (
-                      <div className="mt-12 md:mt-16">
+                      <div className="mt-8 md:mt-12">
                         <div className="flex items-center justify-center">
-                          <div className="h-px w-20 bg-gradient-to-r from-transparent to-cyan-500/50"></div>
-                          <div className="mx-4 w-2 h-2 rounded-full bg-cyan-500/50"></div>
-                          <div className="h-px w-20 bg-gradient-to-l from-transparent to-cyan-500/50"></div>
+                          <div className="h-px w-32 bg-gradient-to-r from-transparent via-cyan-500 to-cyan-500/30"></div>
+                          <div className="mx-4 w-3 h-3 rounded-full bg-cyan-500"></div>
+                          <div className="h-px w-32 bg-gradient-to-l from-transparent via-cyan-500 to-cyan-500/30"></div>
                         </div>
                       </div>
                     )}
