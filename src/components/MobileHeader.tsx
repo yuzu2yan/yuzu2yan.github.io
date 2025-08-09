@@ -35,16 +35,16 @@ export default function MobileHeader() {
           : "bg-transparent"
       )}
     >
-      <div className="w-full px-4 sm:px-6">
+      <div className="w-full" style={{ paddingLeft: '16px', paddingRight: '16px' }}>
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center ml-2" style={{ gap: '8px' }}>
+            <Link href="/" className="flex items-center" style={{ gap: '8px', marginLeft: '12px' }}>
               <Image
                 src="/images/penguin.png"
                 alt="Yuzu Logo"
-                width={28}
-                height={28}
+                width={32}
+                height={32}
                 className="object-contain"
               />
               <span className="text-xl font-medium text-black" style={{ fontFamily: 'sans-serif' }}>
@@ -56,7 +56,8 @@ export default function MobileHeader() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-3 text-black hover:bg-neutral-100 rounded-lg transition-colors mr-2"
+            className="p-3 text-black hover:bg-neutral-100 rounded-lg transition-colors"
+            style={{ marginRight: '12px' }}
           >
             <AnimatePresence mode="wait">
               {isMenuOpen ? (
@@ -67,7 +68,7 @@ export default function MobileHeader() {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <IconX size={24} />
+                  <IconX size={28} />
                 </motion.div>
               ) : (
                 <motion.div
@@ -77,7 +78,7 @@ export default function MobileHeader() {
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <IconMenu2 size={24} />
+                  <IconMenu2 size={28} />
                 </motion.div>
               )}
             </AnimatePresence>

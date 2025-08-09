@@ -68,7 +68,7 @@ export default function MobileSkills() {
       {/* Content */}
       <div className="relative z-10 px-4 w-full">
         <div className="flex items-center justify-center min-h-screen pt-40">
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-4">
             {/* Header section */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -93,15 +93,18 @@ export default function MobileSkills() {
               viewport={{ once: true }}
               className="w-full max-w-sm"
             >
-              <div className="space-y-10">
+              <div className="space-y-8">
                 {Object.entries(skillCategories).map(([category, skills], index) => (
                   <div key={category} className="relative">
                     {/* Category container */}
-                    <div className="mb-6">
+                    <div className="mb-4">
                       <h3 className="text-xl font-bold text-black text-center py-3">
                         {category}
                       </h3>
                     </div>
+                    
+                    {/* Spacer div */}
+                    <div className="h-2"></div>
                     
                     {/* Skills grid container */}
                     <div className="flex justify-center">
