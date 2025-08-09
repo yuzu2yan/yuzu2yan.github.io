@@ -5,7 +5,6 @@ import Image from "next/image"
 import { IconExternalLink } from "@tabler/icons-react"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, FreeMode, Mousewheel } from 'swiper/modules'
-import { cn } from "@/lib/utils"
 import { HexagonPattern } from "@/components/ui/geometric-lines"
 import 'swiper/css'
 import 'swiper/css/navigation'

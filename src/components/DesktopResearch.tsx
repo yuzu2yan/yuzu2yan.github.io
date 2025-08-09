@@ -67,7 +67,7 @@ export default function DesktopResearch() {
                       • Digital Twin - Replication of real-world in a virtual environment with especially 3D LiDAR sensorn
                     </p>
                     <p className="text-lg text-neutral-700 leading-relaxed">
-                      • World Models - AI's internal model for simulating and predicting outcomes, including unseen factors
+                      • World Models - AI&#39;s internal model for simulating and predicting outcomes, including unseen factors
                     </p>
                     <p className="text-lg text-neutral-700 leading-relaxed">
                       • Robot Vision - Computer vision for scene understanding and SLAM to enhance perception

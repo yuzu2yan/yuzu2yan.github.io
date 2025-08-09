@@ -8,7 +8,6 @@ type SpotlightProps = {
 };
 
 export const Spotlight = ({ className, fill }: SpotlightProps) => {
-  const divRef = useRef<HTMLDivElement>(null);
   const [isSafari, setIsSafari] = useState(false);
 
   useEffect(() => {
