@@ -55,74 +55,75 @@ export default function Profile() {
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto">
         <div className="flex items-center justify-center min-h-screen pt-20">
-          {/* Initial Text - Center */}
-          {mounted && showInitialText && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <div className="space-y-4">
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-                  <span className="inline-block text-black">Be</span>{" "}
-                  <span className="inline-block relative">
-                    <span className="relative z-10 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
-                      Creative
-                    </span>
-                    <motion.span
-                      className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-2xl"
-                      animate={{
-                        opacity: [0.5, 1, 0.5],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    />
-                  </span>
-                </h1>
-                
-                <motion.div 
-                  className="max-w-2xl mx-auto"
-                  animate={{ opacity: showInitialText ? 1 : 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <TextGenerateEffect
-                    words="The world is better with Tech."
-                    className="text-lg sm:text-xl text-neutral-600 font-normal"
-                  />
-                </motion.div>
-              </div>
-            </motion.div>
-          )}
-
-          {/* Profile Info - Left */}
-          {mounted && showProfile && (
-            <div className="flex flex-col items-start gap-8">
-              {/* Overview and Introduction text */}
+          <div className="flex flex-col items-start gap-8">
+            {/* Initial Text - Center */}
+            {mounted && showInitialText && (
               <motion.div
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="space-y-1"
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.8 }}
+                className="text-center w-full flex items-center justify-center min-h-screen"
               >
-                <p className="text-sm md:text-base lg:text-lg font-medium text-neutral-600">
-                  INTRODUCTION
-                </p>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
-                  Overview.
-                </h1>
+                <div className="space-y-4">
+                  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+                    <span className="inline-block text-black">Be</span>{" "}
+                    <span className="inline-block relative">
+                      <span className="relative z-10 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
+                        Creative
+                      </span>
+                      <motion.span
+                        className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-2xl"
+                        animate={{
+                          opacity: [0.5, 1, 0.5],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      />
+                    </span>
+                  </h1>
+                  
+                  <motion.div 
+                    className="max-w-2xl mx-auto"
+                    animate={{ opacity: showInitialText ? 1 : 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <TextGenerateEffect
+                      words="The world is better with Tech."
+                      className="text-lg sm:text-xl text-neutral-600 font-normal"
+                    />
+                  </motion.div>
+                </div>
               </motion.div>
+            )}
 
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="flex items-center gap-8 max-w-4xl"
-              >
+            {/* Profile Info - Left */}
+            {mounted && showProfile && (
+              <>
+                {/* Overview and Introduction text */}
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  className="space-y-1"
+                >
+                  <p className="text-sm md:text-base lg:text-lg font-medium text-neutral-600">
+                    INTRODUCTION
+                  </p>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
+                    Overview.
+                  </h1>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="flex items-center gap-8 max-w-4xl"
+                >
               {/* Profile Image and Resume Button */}
               <div className="flex flex-col items-center gap-6">
                 <motion.div
@@ -184,8 +185,9 @@ export default function Profile() {
                 </div>
               </div>
               </motion.div>
-            </div>
-          )}
+              </>
+            )}
+          </div>
         </div>
       </div>
     </section>

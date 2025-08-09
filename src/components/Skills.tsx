@@ -6,31 +6,53 @@ import { HexagonPattern } from "@/components/ui/geometric-lines"
 
 const skillCategories = {
   Programming: [
-    { name: "C", image: "/images/c.png" },
-    { name: "C++", image: "/images/c++.png" },
-    { name: "Java", image: "/images/java.png" },
-    { name: "Python", image: "/images/python.png" },
     { name: "HTML", image: "/images/html.png" },
     { name: "CSS", image: "/images/css.png" },
     { name: "JavaScript", image: "/images/js.png" },
     { name: "TypeScript", image: "/images/ts.png" },
+    { name: "Dart", image: "/images/dart.png" },
     { name: "PHP", image: "/images/php.png" },
+    { name: "Java", image: "/images/java.png" },
+    { name: "C", image: "/images/c.png" },
+    { name: "C++", image: "/images/c++.png" },
+    { name: "Rust", image: "/images/rust.png" },
+    { name: "Python", image: "/images/python.png" },
   ],
   Technologies: [
     { name: "React", image: "/images/react.png" },
+    { name: "Node.js", image: "/images/nodejs.png" },
     { name: "Next.js", image: "/images/nextjs.svg" },
-    { name: "Git", image: "/images/git.png" },
-    { name: "Docker", image: "/images/docker.svg" },
-    { name: "Linux", image: "/images/linux.png" },
+    { name: "Flutter", image: "/images/flutter.svg" },
     { name: "ROS", image: "/images/ros.png" },
     { name: "Arduino", image: "/images/arduino.png" },
     { name: "Raspberry Pi", image: "/images/raspi.png" },
     { name: "Autoware", image: "/images/autoware.png" },
-    { name: "TensorFlow", image: "/images/tensorflow.png" },
     { name: "OpenCV", image: "/images/opencv.svg" },
+    { name: "NS-3", image: "/images/ns-3.png" },
+    { name: "Unity", image: "/images/unity.svg" },
+    { name: "TensorFlow", image: "/images/tensorflow.png" },
+    { name: "PyTorch", image: "/images/pytorch.png" },
+    { name: "Hugging Face", image: "/images/huggingface.png" },
+    { name: "LangChain", image: "/images/langchain.svg" },
+    { name: "Omniverse", image: "/images/omniverse.png" },
+    { name: "AWS", image: "/images/aws.png" },
+    { name: "SQLite", image: "/images/sqlite.png" },
+    { name: "MySQL", image: "/images/mysql.svg" },
+    { name: "PostgreSQL", image: "/images/postgresql.png" },
+    { name: "Firebase", image: "/images/firebase.png" },
+    { name: "Supabase", image: "/images/supabase.png" },
+    { name: "MongoDB", image: "/images/mongodb.png" },
+    { name: "Pinecone", image: "/images/pinecone.svg" },
+    { name: "Git", image: "/images/git.png" },
+    { name: "Docker", image: "/images/docker.svg" },
+    { name: "Linux", image: "/images/linux.png" },
   ],
   Design: [
-    { name: "Unity", image: "/images/unity.svg" },
+    { name: "Figma", image: "/images/figma.png" },
+    { name: "Illustrator", image: "/images/illustrator.png" },
+    { name: "Photoshop", image: "/images/photoshop.png" },
+    { name: "Premiere Pro", image: "/images/premiere-pro.png" },
+    { name: "Canva", image: "/images/canva.png" },
   ],
 }
 
@@ -86,7 +108,7 @@ export default function Skills() {
                     
                     {/* Skills grid container */}
                     <div className="flex justify-center">
-                      <div className="inline-flex flex-wrap justify-center gap-3 md:gap-4 max-w-[44rem]">
+                      <div className="inline-flex flex-wrap justify-center gap-2 md:gap-3 max-w-[55rem]">
                         {skills.map((skill) => (
                           <motion.div
                             key={skill.name}
@@ -103,7 +125,7 @@ export default function Skills() {
                                   alt={skill.name}
                                   width={60}
                                   height={60}
-                                  className="w-14 h-14 md:w-16 md:h-16 object-contain transition-all duration-300 group-hover:filter group-hover:brightness-110"
+                                  className="w-12 h-12 md:w-14 md:h-14 object-contain transition-all duration-300 group-hover:filter group-hover:brightness-110"
                                 />
                                 <div className="absolute inset-0 bg-cyan-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                               </div>
