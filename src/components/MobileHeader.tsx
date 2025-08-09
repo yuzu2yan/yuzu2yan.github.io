@@ -31,7 +31,7 @@ export default function MobileHeader() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 md:hidden",
         scrolled
-          ? "bg-white/80 backdrop-blur-lg border-b border-neutral-200"
+          ? "bg-white/95 backdrop-blur-md border-b border-neutral-200/50"
           : "bg-transparent"
       )}
     >

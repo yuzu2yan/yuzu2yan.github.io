@@ -58,7 +58,7 @@ const skillCategories = {
 
 export default function DesktopSkills() {
   return (
-    <section id="about" className="min-h-screen relative overflow-hidden scroll-mt-0 hidden md:block">
+    <section id="about" className="min-h-screen relative overflow-hidden scroll-mt-20 hidden md:block">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/30" />
@@ -67,7 +67,7 @@ export default function DesktopSkills() {
       
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex items-center justify-center min-h-screen pt-40">
+        <div className="flex items-center justify-center min-h-screen pt-32">
           <div className="flex flex-col gap-8 items-center">
             {/* Header section */}
             <div className="w-full max-w-4xl">
