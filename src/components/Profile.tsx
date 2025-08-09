@@ -118,71 +118,137 @@ export default function Profile() {
                   </h1>
                 </motion.div>
 
+                {/* Mobile Layout */}
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="flex flex-col lg:flex-row items-center gap-8 max-w-4xl w-full"
+                  className="flex flex-col items-center gap-6 max-w-4xl w-full lg:hidden"
                 >
-              {/* Profile Image and Resume Button */}
-              <div className="flex flex-col items-center gap-6">
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="flex-shrink-0"
-                >
-                  <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
-                    <Image
-                      src="/images/profile_img.jpg"
-                      alt="Joe Kohzen (Yuzu)"
-                      fill
-                      className="object-cover rounded-3xl shadow-2xl"
-                      priority
-                    />
-                    {/* Decorative border */}
-                    <div className="absolute inset-0 rounded-3xl ring-4 ring-cyan-500/20" />
+                  {/* Profile Image */}
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="flex-shrink-0"
+                  >
+                    <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56">
+                      <Image
+                        src="/images/profile_img.jpg"
+                        alt="Joe Kohzen (Yuzu)"
+                        fill
+                        className="object-cover rounded-3xl shadow-2xl"
+                        priority
+                      />
+                      {/* Decorative border */}
+                      <div className="absolute inset-0 rounded-3xl ring-4 ring-cyan-500/20" />
+                    </div>
+                  </motion.div>
+                  
+                  {/* Name and Title */}
+                  <div className="text-center">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-black mb-2">
+                      Joe Kohzen (Yuzu)
+                    </h2>
+                    <p className="text-lg sm:text-xl text-cyan-600 font-medium">
+                      Developer · Designer · Creator
+                    </p>
                   </div>
+                  
+                  {/* Description */}
+                  <div className="text-base sm:text-lg text-neutral-600 leading-relaxed text-left max-w-xl w-full" style={{ paddingLeft: '32px', paddingRight: '32px', marginTop: '-16px' }}>
+                    <TypewriterEffect
+                      words="Hello! As a first-year master's student pursuing computer science, I am specializing in intelligent robot using digital twin and world models. My academic journey is dedicated to exploring the intersection between technology and creativity."
+                      className="block"
+                      delay={0.5}
+                      speed={0.02}
+                    />
+                  </div>
+                  
+                  {/* Resume Button */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                  >
+                    <a
+                      href="/data/Resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-cyan-400 text-white rounded-xl hover:bg-cyan-500 hover:shadow-lg hover:scale-105 transition-all duration-300"
+                      style={{ padding: '12px 24px' }}
+                    >
+                      <span className="text-base sm:text-lg font-semibold">View My Resume</span>
+                    </a>
+                  </motion.div>
                 </motion.div>
 
-                {/* Resume Button */}
+                {/* Desktop Layout */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="hidden lg:flex flex-row items-center gap-8 max-w-4xl w-full"
                 >
-                  <a
-                    href="/data/Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-6 py-3 bg-cyan-400 text-white rounded-xl hover:bg-cyan-500 hover:shadow-lg hover:scale-105 transition-all duration-300"
-                  >
-                    <span className="text-sm sm:text-base font-medium">View My Resume</span>
-                  </a>
+                  {/* Profile Image and Resume Button */}
+                  <div className="flex flex-col items-center gap-6">
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      className="flex-shrink-0"
+                    >
+                      <div className="relative w-64 h-64">
+                        <Image
+                          src="/images/profile_img.jpg"
+                          alt="Joe Kohzen (Yuzu)"
+                          fill
+                          className="object-cover rounded-3xl shadow-2xl"
+                          priority
+                        />
+                        {/* Decorative border */}
+                        <div className="absolute inset-0 rounded-3xl ring-4 ring-cyan-500/20" />
+                      </div>
+                    </motion.div>
+
+                    {/* Resume Button */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.8 }}
+                    >
+                      <a
+                        href="/data/Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-6 py-3 bg-cyan-400 text-white rounded-xl hover:bg-cyan-500 hover:shadow-lg hover:scale-105 transition-all duration-300"
+                      >
+                        <span className="text-base font-medium">View My Resume</span>
+                      </a>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Text Content */}
+                  <div className="space-y-6 text-left">
+                    <div>
+                      <h2 className="text-5xl font-bold text-black mb-2">
+                        Joe Kohzen (Yuzu)
+                      </h2>
+                      <p className="text-xl text-cyan-600 font-medium">
+                        Developer · Designer · Creator
+                      </p>
+                    </div>
+                    
+                    <div className="text-lg text-neutral-600 leading-relaxed">
+                      <TypewriterEffect
+                        words="Hello! As a first-year master's student pursuing computer science, I am specializing in intelligent robot using digital twin and world models. My academic journey is dedicated to exploring the intersection between technology and creativity."
+                        className="block"
+                        delay={0.5}
+                        speed={0.02}
+                      />
+                    </div>
+                  </div>
                 </motion.div>
-              </div>
-              
-              {/* Text Content */}
-              <div className="space-y-6 text-center lg:text-left">
-                <div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-2">
-                    Joe Kohzen (Yuzu)
-                  </h2>
-                  <p className="text-lg sm:text-xl text-cyan-600 font-medium">
-                    Developer · Designer · Creator
-                  </p>
-                </div>
-                
-                <div className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  <TypewriterEffect
-                    words="Hello! As a first-year master's student pursuing computer science, I am specializing in intelligent robot using digital twin and world models. My academic journey is dedicated to exploring the intersection between technology and creativity."
-                    className="block"
-                    delay={0.5}
-                    speed={0.02}
-                  />
-                </div>
-              </div>
-              </motion.div>
               </>
             )}
           </div>
