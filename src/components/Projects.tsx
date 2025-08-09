@@ -48,7 +48,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="works" className="py-32 md:py-40 relative overflow-hidden">
+    <section id="works" className="min-h-screen flex items-center relative overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-tl from-white via-blue-50/30 to-cyan-50/30" />
       
@@ -103,7 +103,7 @@ export default function Projects() {
         }
       `}</style>
 
-      <div className="relative w-full px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto">
           <div className="flex flex-col items-start gap-8 w-full max-w-4xl">
             {/* Section Header - same as Skills */}

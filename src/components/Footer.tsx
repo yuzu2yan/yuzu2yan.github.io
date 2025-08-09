@@ -32,7 +32,7 @@ export default function Footer() {
   }
 
   return (
-    <footer id="contact" className="relative bg-black text-white pt-32 pb-16 overflow-hidden">
+    <footer id="contact" className="relative bg-black text-white pt-64 pb-32 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
@@ -46,7 +46,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-32"
         >
           
           {/* Social Links */}

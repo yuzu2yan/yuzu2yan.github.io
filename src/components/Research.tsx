@@ -6,14 +6,14 @@ import { HexagonPattern } from "@/components/ui/geometric-lines"
 
 export default function Research() {
   return (
-    <section id="research" className="py-32 md:py-40 relative overflow-hidden">
+    <section id="research" className="min-h-screen flex items-center relative overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-bl from-white via-purple-50/30 to-pink-50/30" />
       
       {/* Hexagon pattern overlay */}
       <HexagonPattern className="text-purple-500 opacity-[0.03]" />
       
-      <div className="relative w-full px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto">
           <div className="flex flex-col items-start gap-8 w-full max-w-4xl">
             {/* Section Header */}
@@ -40,7 +40,7 @@ export default function Research() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-5xl mx-auto mt-16"
+          className="w-full mt-16 px-8 md:px-16 lg:px-24"
         >
           <div className="grid md:grid-cols-2 gap-8">
             {/* Current Research */}

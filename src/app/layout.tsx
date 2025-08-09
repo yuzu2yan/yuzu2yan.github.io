@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   title: "Yuzu | Portfolio",
   description: "Yuzu - Computer Science Student & Robotics Enthusiast",
   icons: {
-    icon: '/images/penguin_white.png',
-    apple: '/images/penguin_white.png',
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 };
 
@@ -36,6 +36,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
+        suppressHydrationWarning
       >
         {children}
       </body>

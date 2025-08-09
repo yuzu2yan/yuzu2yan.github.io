@@ -38,7 +38,7 @@ export default function Profile() {
   }, [mounted])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-24">
+    <section id="profile" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-24">
       {/* Background animations */}
       {mounted && (
         <>

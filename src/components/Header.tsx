@@ -20,10 +20,10 @@ export default function Header() {
   }, [])
 
   const navItems = [
+    { href: "#profile", label: "Profile" },
     { href: "#about", label: "Skills" },
     { href: "#research", label: "Research" },
     { href: "#works", label: "Projects" },
-    { href: "#contact", label: "Contact" },
   ]
 
   return (
