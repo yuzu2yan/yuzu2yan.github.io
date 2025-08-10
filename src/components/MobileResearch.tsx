@@ -5,7 +5,7 @@ import { HexagonPattern } from "@/components/ui/geometric-lines"
 
 export default function MobileResearch() {
   return (
-    <section id="research" className="min-h-screen relative overflow-hidden scroll-mt-20 md:hidden">
+    <section id="research" className="min-h-screen relative md:hidden scroll-mt-10 pt-16">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-bl from-white via-purple-50/30 to-pink-50/30" />

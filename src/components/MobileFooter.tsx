@@ -32,7 +32,7 @@ export default function MobileFooter() {
   }
 
   return (
-    <footer id="contact" className="relative bg-black text-white overflow-hidden py-12 md:hidden">
+    <footer id="contact" className="relative bg-black text-white overflow-hidden py-12 pb-safe-bottom md:hidden">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
@@ -40,7 +40,7 @@ export default function MobileFooter() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 w-full">
+      <div className="relative z-10 px-4 w-full pb-safe-bottom">
         <div className="flex flex-col items-center gap-4">
             {/* Header section */}
             <motion.div
