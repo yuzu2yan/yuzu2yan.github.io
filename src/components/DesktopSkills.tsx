@@ -58,7 +58,7 @@ const skillCategories = {
 
 export default function DesktopSkills() {
   return (
-    <section id="about" className="min-h-screen relative overflow-hidden hidden md:block md:scroll-mt-24 lg:scroll-mt-16">
+    <section id="about" className="min-h-screen relative overflow-hidden hidden md:block scroll-mt-10">
       <style jsx>{`
         @media (min-width: 768px) and (max-width: 1023px) {
           .tablet-padding {

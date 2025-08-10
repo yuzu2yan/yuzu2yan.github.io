@@ -38,7 +38,7 @@ export default function DesktopProfile() {
   }, [mounted])
 
   return (
-    <section id="profile" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-24 hidden md:flex md:scroll-mt-24 lg:scroll-mt-16">
+    <section id="profile" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-24 hidden md:flex scroll-mt-10">
       <style jsx>{`
         @media (min-width: 768px) and (max-width: 1023px) {
           .tablet-padding {
