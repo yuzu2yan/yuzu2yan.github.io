@@ -38,7 +38,7 @@ export default function DesktopProfile() {
   }, [mounted])
 
   return (
-    <section id="profile" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-24 hidden md:flex scroll-mt-16">
+    <section id="profile" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-24 hidden md:flex md:scroll-mt-24 lg:scroll-mt-16">
       <style jsx>{`
         @media (min-width: 768px) and (max-width: 1023px) {
           .tablet-padding {
@@ -188,7 +188,7 @@ export default function DesktopProfile() {
                     words="Hello! As a first-year master's student pursuing computer science, I am specializing in intelligent robot using digital twin and world models. My academic journey is dedicated to exploring the intersection between technology and creativity."
                     className="block"
                     delay={0.5}
-                    speed={0.03}
+                    speed={0.02}
                   />
                 </div>
               </div>
