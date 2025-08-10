@@ -32,7 +32,7 @@ export default function DesktopFooter() {
   }
 
   return (
-    <footer id="contact" className="relative bg-black text-white overflow-hidden py-20 hidden md:block">
+    <footer id="contact" className="relative bg-black text-white overflow-hidden py-20 pb-safe-bottom hidden md:block">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
@@ -40,7 +40,7 @@ export default function DesktopFooter() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full pb-safe-bottom">
         <div className="flex flex-col items-center gap-4">
             {/* Spacer div */}
             <div className="h-4 md:h-6"></div>

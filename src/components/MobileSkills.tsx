@@ -58,7 +58,7 @@ const skillCategories = {
 
 export default function MobileSkills() {
   return (
-    <section id="about" className="min-h-screen relative overflow-hidden scroll-mt-20 md:hidden">
+    <section id="about" className="min-h-screen relative md:hidden scroll-mt-10 pt-16">
       {/* Background layers */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/30" />
@@ -67,7 +67,7 @@ export default function MobileSkills() {
       
       {/* Content */}
       <div className="relative z-10 px-4 w-full">
-        <div className="flex items-center justify-center min-h-screen" style={{ paddingTop: '70px' }}>
+        <div className="flex items-center justify-center min-h-screen">
           <div className="flex flex-col items-center gap-4">
             {/* Header section */}
             <motion.div

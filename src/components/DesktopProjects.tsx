@@ -54,7 +54,7 @@ const projects = [
 
 export default function DesktopProjects() {
   return (
-    <section id="works" className="min-h-screen flex items-center relative overflow-hidden hidden md:flex scroll-mt-20">
+    <section id="works" className="min-h-screen flex items-center relative overflow-hidden hidden md:flex scroll-mt-16">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-tl from-white via-blue-50/30 to-cyan-50/30" />
       

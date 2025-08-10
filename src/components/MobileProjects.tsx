@@ -53,7 +53,7 @@ const projects = [
 
 export default function MobileProjects() {
   return (
-    <section id="works" className="min-h-screen flex items-center relative overflow-hidden md:hidden scroll-mt-20">
+    <section id="works" className="min-h-screen flex items-center relative overflow-hidden md:hidden scroll-mt-10 pt-16">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-tl from-white via-blue-50/30 to-cyan-50/30" />
       
@@ -82,7 +82,7 @@ export default function MobileProjects() {
         }
       `}</style>
 
-      <div className="relative w-full px-4" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
+      <div className="relative w-full px-4">
         <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col items-center gap-8 w-full">
             {/* Section Header */}

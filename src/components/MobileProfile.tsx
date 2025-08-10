@@ -38,7 +38,7 @@ export default function MobileProfile() {
   }, [mounted])
 
   return (
-    <section id="profile" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 pb-24 md:hidden">
+    <section id="profile" className="relative min-h-screen flex items-center justify-center bg-white pb-24 md:hidden scroll-mt-16 pt-16">
       {/* Background animations */}
       {mounted && (
         <>
