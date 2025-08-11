@@ -145,8 +145,8 @@ export default function MobileProfile() {
                   </motion.div>
                   
                   {/* Text Content */}
-                  <div className="space-y-4 text-center">
-                    <div>
+                  <div className="space-y-4 flex flex-col items-center">
+                    <div className="text-center">
                       <h2 className="text-2xl font-bold text-black mb-2">
                         Joe Kohzen (Yuzu)
                       </h2>
@@ -155,7 +155,7 @@ export default function MobileProfile() {
                       </p>
                     </div>
                     
-                    <div className="text-base text-neutral-600 leading-relaxed px-4">
+                    <div className="text-base text-neutral-600 leading-relaxed max-w-xs text-left w-full" style={{ paddingLeft: '16px', paddingRight: '16px' }}>
                       <TypewriterEffect
                         words="Hello! As a first-year master's student pursuing computer science, I am specializing in intelligent robot using digital twin and world models."
                         className="block"
