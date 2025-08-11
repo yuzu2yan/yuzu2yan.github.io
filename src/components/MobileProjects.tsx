@@ -32,7 +32,7 @@ const projects = [
     award: "Rebase Prized!",
     color: "from-purple-400 to-pink-600",
     image: "/images/builder-weekend.jpg",
-    link: "https://github.com/yuzu2yan/ARLISS2024",
+    link: "https://github.com/MrKoga/generative-instrument",
   },
   {
     title: "Tanegashima Rocket Contest 2024",
