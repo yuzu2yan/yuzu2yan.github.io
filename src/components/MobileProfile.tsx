@@ -20,21 +20,8 @@ export default function MobileProfile() {
   useEffect(() => {
     if (!mounted) return
 
-    // Wait for loading animation to finish (3s)
-    const loadingTimer = setTimeout(() => {
-      setShowInitialText(true)
-    }, 3200) // 3s loading + 200ms buffer
-
-    // Hide initial text after showing it
-    const hideTextTimer = setTimeout(() => {
-      setShowInitialText(false)
-      setTimeout(() => setShowProfile(true), 500)
-    }, 6200) // 3.2s wait + 3s display
-
-    return () => {
-      clearTimeout(loadingTimer)
-      clearTimeout(hideTextTimer)
-    }
+    // Show profile immediately
+    setShowProfile(true)
   }, [mounted])
 
   return (
@@ -56,50 +43,6 @@ export default function MobileProfile() {
       <div className="relative z-10 px-4 w-full">
         <div className="flex items-center justify-center min-h-screen pt-20">
           <div className="flex flex-col items-center gap-8">
-            {/* Initial Text - Center */}
-            {mounted && showInitialText && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.8 }}
-                className="text-center w-full flex items-center justify-center min-h-screen"
-              >
-                <div className="space-y-4">
-                  <h1 className="text-4xl font-bold tracking-tight">
-                    <span className="inline-block text-black">Be</span>{" "}
-                    <span className="inline-block relative">
-                      <span className="relative z-10 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
-                        Creative
-                      </span>
-                      <motion.span
-                        className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-2xl"
-                        animate={{
-                          opacity: [0.5, 1, 0.5],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }}
-                      />
-                    </span>
-                  </h1>
-                  
-                  <motion.div 
-                    className="max-w-sm mx-auto"
-                    animate={{ opacity: showInitialText ? 1 : 0 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <TextGenerateEffect
-                      words="The world is better with Tech."
-                      className="text-base text-neutral-600 font-normal"
-                    />
-                  </motion.div>
-                </div>
-              </motion.div>
-            )}
-
             {/* Profile Info */}
             {mounted && showProfile && (
               <>
