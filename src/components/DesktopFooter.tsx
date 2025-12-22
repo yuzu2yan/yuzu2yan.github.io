@@ -32,12 +32,12 @@ export default function DesktopFooter() {
   }
 
   return (
-    <footer id="contact" className="relative bg-black text-white overflow-hidden py-20 pb-safe-bottom hidden md:block">
+    <footer id="contact" className="relative bg-white text-black overflow-hidden py-20 pb-safe-bottom hidden md:block">
       {/* Background layers */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full pb-safe-bottom">
@@ -53,7 +53,7 @@ export default function DesktopFooter() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h1 className="text-2xl md:text-3xl font-bold text-white">
+              <h1 className="text-2xl md:text-3xl font-bold text-black">
                 Contact.
               </h1>
             </motion.div>
@@ -82,7 +82,7 @@ export default function DesktopFooter() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
                 className={cn(
-                  "relative group p-5 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 transition-all hover:bg-white/10 hover:border-cyan-500/50",
+                  "relative group p-2 text-black transition-all",
                   link.color
                 )}
               >
@@ -108,7 +108,7 @@ export default function DesktopFooter() {
               }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="relative group p-5 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 transition-all hover:bg-white/10 hover:border-cyan-500/50 hover:text-green-500"
+              className="relative group p-2 text-black transition-all hover:text-green-500"
             >
               <Image
                 src="/images/qiita.png"
@@ -136,12 +136,12 @@ export default function DesktopFooter() {
                 >
                   <div className="relative">
                     <div className="absolute inset-0 bg-cyan-500 blur-md opacity-50"></div>
-                    <div className="relative w-10 h-10 bg-black rounded-lg flex items-center justify-center">
+                    <div className="relative w-10 h-10 bg-neutral-100 rounded-lg flex items-center justify-center">
                       <IconHeart className="w-5 h-5 text-cyan-400" />
                     </div>
                   </div>
                   <div>
-                    <p className="text-sm text-neutral-300">Created by Yuzu</p>
+                    <p className="text-sm text-neutral-700">Created by Yuzu</p>
                   </div>
                 </motion.div>
 
@@ -153,10 +153,10 @@ export default function DesktopFooter() {
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -2 }}
-                  className="group flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-cyan-500/50 transition-all absolute"
+                  className="group flex items-center gap-2 bg-neutral-100 backdrop-blur-sm rounded-lg border border-neutral-200 hover:bg-neutral-200 hover:border-cyan-500/50 transition-all absolute"
                   style={{ padding: '10px 20px', top: '-50px', right: '20px' }}
                 >
-                  <span className="text-sm text-neutral-300 group-hover:text-cyan-400 transition-colors">Back to Top</span>
+                  <span className="text-sm text-neutral-700 group-hover:text-cyan-400 transition-colors">Back to Top</span>
                   <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
                     <IconArrowUp className="w-4 h-4 text-cyan-400" />
                   </div>

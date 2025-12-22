@@ -106,7 +106,7 @@ export default function MobileHeader() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ type: 'spring', damping: 20, stiffness: 300 }}
-              className="fixed top-20 right-4 h-auto w-32 bg-gradient-to-br from-cyan-50 via-white to-purple-50 shadow-2xl z-50 rounded-3xl overflow-hidden border-2 border-cyan-100"
+              className="fixed top-20 right-4 h-auto w-32 bg-white shadow-2xl z-50 rounded-3xl overflow-hidden border-2 border-cyan-100"
             >
               <div style={{ paddingTop: '20px', paddingBottom: '20px', paddingLeft: '12px', paddingRight: '12px' }}>
                 {/* Navigation items */}

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { HexagonPattern } from "@/components/ui/geometric-lines"
 
 const skillCategories = {
   Programming: [
@@ -58,12 +57,12 @@ const skillCategories = {
 
 export default function MobileSkills() {
   return (
-    <section id="about" className="min-h-screen relative md:hidden scroll-mt-10 pt-16">
+    <section id="about" className="min-h-screen relative md:hidden scroll-mt-10 pt-16 bg-white">
       {/* Background layers */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/30" />
         <HexagonPattern className="text-cyan-500 opacity-[0.03]" />
-      </div>
+      </div> */}
       
       {/* Content */}
       <div className="relative z-10 px-4 w-full">

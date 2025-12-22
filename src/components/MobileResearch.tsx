@@ -1,16 +1,15 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { HexagonPattern } from "@/components/ui/geometric-lines"
 
 export default function MobileResearch() {
   return (
-    <section id="research" className="min-h-screen relative md:hidden scroll-mt-10 pt-16">
+    <section id="research" className="min-h-screen relative md:hidden scroll-mt-10 pt-16 bg-white">
       {/* Background layers */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-bl from-white via-purple-50/30 to-pink-50/30" />
         <HexagonPattern className="text-purple-500 opacity-[0.03]" />
-      </div>
+      </div> */}
       
       {/* Content */}
       <div className="relative z-10 w-full" style={{ paddingLeft: '24px', paddingRight: '24px' }}>

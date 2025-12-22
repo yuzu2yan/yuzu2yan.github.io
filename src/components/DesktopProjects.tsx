@@ -5,7 +5,6 @@ import Image from "next/image"
 import { IconExternalLink } from "@tabler/icons-react"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, FreeMode, Mousewheel } from 'swiper/modules'
-import { HexagonPattern } from "@/components/ui/geometric-lines"
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -54,12 +53,12 @@ const projects = [
 
 export default function DesktopProjects() {
   return (
-    <section id="works" className="min-h-screen flex items-center relative overflow-hidden hidden md:flex scroll-mt-10">
+    <section id="works" className="min-h-screen flex items-center relative overflow-hidden hidden md:flex scroll-mt-10 bg-white">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-tl from-white via-blue-50/30 to-cyan-50/30" />
+      {/* <div className="absolute inset-0 bg-gradient-to-tl from-white via-blue-50/30 to-cyan-50/30" /> */}
       
       {/* Hexagon pattern overlay */}
-      <HexagonPattern className="text-blue-500 opacity-[0.03]" />
+      {/* <HexagonPattern className="text-blue-500 opacity-[0.03]" /> */}
       
       <style jsx global>{`
         .desktop-works-swiper {

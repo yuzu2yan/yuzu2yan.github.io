@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { HexagonPattern } from "@/components/ui/geometric-lines"
 
 const skillCategories = {
   Programming: [
@@ -58,7 +57,7 @@ const skillCategories = {
 
 export default function DesktopSkills() {
   return (
-    <section id="about" className="min-h-screen relative overflow-hidden hidden md:block scroll-mt-10">
+    <section id="about" className="min-h-screen relative overflow-hidden hidden md:block scroll-mt-10 bg-white">
       <style jsx>{`
         @media (min-width: 768px) and (max-width: 1023px) {
           .tablet-padding {
@@ -68,10 +67,10 @@ export default function DesktopSkills() {
         }
       `}</style>
       {/* Background layers */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/30" />
         <HexagonPattern className="text-cyan-500 opacity-[0.03]" />
-      </div>
+      </div> */}
       
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full tablet-padding">

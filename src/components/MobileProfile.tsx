@@ -3,14 +3,10 @@
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
 import { TypewriterEffect } from "@/components/ui/typewriter-effect"
-import { GeometricLines, FloatingDots, HexagonPattern } from "@/components/ui/geometric-lines"
-import { AnimatedParticles, MovingGradient, FloatingShapes } from "@/components/ui/animated-particles"
 
 export default function MobileProfile() {
   const [mounted, setMounted] = useState(false)
-  const [showInitialText, setShowInitialText] = useState(false)
   const [showProfile, setShowProfile] = useState(false)
 
   useEffect(() => {
@@ -27,7 +23,7 @@ export default function MobileProfile() {
   return (
     <section id="profile" className="relative min-h-screen flex items-center justify-center bg-white pb-24 md:hidden scroll-mt-16 pt-16">
       {/* Background animations */}
-      {mounted && (
+      {/* mounted && (
         <>
           <AnimatedParticles />
           <MovingGradient />
@@ -37,7 +33,7 @@ export default function MobileProfile() {
           <GeometricLines position="bottom-left" color="stroke-cyan-400/20" className="rotate-180" />
           <FloatingDots />
         </>
-      )}
+      ) */}
 
       {/* Content */}
       <div className="relative z-10 px-4 w-full">
@@ -77,7 +73,7 @@ export default function MobileProfile() {
                     <div className="relative w-40 h-40">
                       <Image
                         src="/images/profile_img.jpg"
-                        alt="Joe Kohzen (Yuzu)"
+                        alt="Joe Kozen (Yuzu)"
                         fill
                         className="object-cover rounded-3xl shadow-2xl"
                         priority
@@ -91,7 +87,7 @@ export default function MobileProfile() {
                   <div className="space-y-4 flex flex-col items-center">
                     <div className="text-center">
                       <h2 className="text-2xl font-bold text-black mb-2">
-                        Joe Kohzen (Yuzu)
+                        Joe Kozen (Yuzu)
                       </h2>
                       <p className="text-base text-cyan-600 font-medium">
                         Developer · Designer · Creator
