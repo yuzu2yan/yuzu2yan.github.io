@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic'
 import Header from "@/components/Header"
 import Profile from "@/components/Profile"
-import LoadingAnimation from "@/components/LoadingAnimation"
 
 // 動的インポートで遅延ロード
 const Skills = dynamic(() => import('@/components/Skills'), {
@@ -23,7 +22,6 @@ const Footer = dynamic(() => import('@/components/Footer'), {
 export default function Home() {
   return (
     <>
-      <LoadingAnimation />
       <div className="min-h-screen">
         <Header />
         <main>
