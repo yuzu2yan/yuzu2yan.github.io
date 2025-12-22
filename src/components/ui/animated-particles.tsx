@@ -14,7 +14,6 @@ interface Particle {
 
 export function AnimatedParticles({ className }: { className?: string }) {
   const [particles, setParticles] = useState<Particle[]>([])
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
 
   useEffect(() => {
@@ -32,12 +31,6 @@ export function AnimatedParticles({ className }: { className?: string }) {
       vy: ((i % 3) - 1) * 0.5,
     }))
     setParticles(initialParticles)
-
-    // Mouse tracking
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener("mousemove", handleMouseMove)
 
     // Animation loop
     let animationId: number
@@ -66,7 +59,6 @@ export function AnimatedParticles({ className }: { className?: string }) {
     animate()
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
       cancelAnimationFrame(animationId)
     }
   }, [dimensions.width, dimensions.height])

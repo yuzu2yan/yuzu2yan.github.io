@@ -3,14 +3,10 @@
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
 import { TypewriterEffect } from "@/components/ui/typewriter-effect"
-import { GeometricLines, FloatingDots, HexagonPattern } from "@/components/ui/geometric-lines"
-import { AnimatedParticles, MovingGradient, FloatingShapes } from "@/components/ui/animated-particles"
 
 export default function DesktopProfile() {
   const [mounted, setMounted] = useState(false)
-  const [showInitialText, setShowInitialText] = useState(false)
   const [showProfile, setShowProfile] = useState(false)
 
   useEffect(() => {
@@ -35,7 +31,7 @@ export default function DesktopProfile() {
         }
       `}</style>
       {/* Background animations */}
-      {mounted && (
+      {/* mounted && (
         <>
           <AnimatedParticles />
           <MovingGradient />
@@ -45,7 +41,7 @@ export default function DesktopProfile() {
           <GeometricLines position="bottom-left" color="stroke-cyan-400/20" className="rotate-180" />
           <FloatingDots />
         </>
-      )}
+      ) */}
 
       {/* Content */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto tablet-padding">
@@ -86,7 +82,7 @@ export default function DesktopProfile() {
                   <div className="relative w-64 h-64">
                     <Image
                       src="/images/profile_img.jpg"
-                      alt="Joe Kohzen (Yuzu)"
+                      alt="Joe Kozen (Yuzu)"
                       fill
                       className="object-cover rounded-3xl shadow-2xl"
                       priority
@@ -119,7 +115,7 @@ export default function DesktopProfile() {
               <div className="space-y-6">
                 <div>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-2">
-                    Joe Kohzen (Yuzu)
+                    Joe Kozen (Yuzu)
                   </h2>
                   <p className="text-lg sm:text-xl text-cyan-600 font-medium">
                     Developer · Designer · Creator

@@ -32,12 +32,12 @@ export default function MobileFooter() {
   }
 
   return (
-    <footer id="contact" className="relative bg-black text-white overflow-hidden py-12 pb-safe-bottom md:hidden">
+    <footer id="contact" className="relative bg-white text-black overflow-hidden py-12 pb-safe-bottom md:hidden">
       {/* Background layers */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-10 px-4 w-full pb-safe-bottom">
@@ -51,7 +51,7 @@ export default function MobileFooter() {
               className="text-center"
               style={{ marginTop: '20px' }}
             >
-              <h1 className="text-2xl font-bold text-white">
+              <h1 className="text-2xl font-bold text-black">
                 Contact.
               </h1>
             </motion.div>
@@ -80,7 +80,7 @@ export default function MobileFooter() {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
                 className={cn(
-                  "relative group p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 transition-all hover:bg-white/10 hover:border-cyan-500/50",
+                  "relative group p-2 text-black transition-all",
                   link.color
                 )}
               >
@@ -103,7 +103,7 @@ export default function MobileFooter() {
               }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="relative group p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 transition-all hover:bg-white/10 hover:border-cyan-500/50 hover:text-green-500"
+              className="relative group p-2 text-black transition-all hover:text-green-500"
             >
               <Image
                 src="/images/qiita.png"
@@ -127,12 +127,12 @@ export default function MobileFooter() {
                 >
                   <div className="relative">
                     <div className="absolute inset-0 bg-cyan-500 blur-md opacity-50"></div>
-                    <div className="relative w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+                    <div className="relative w-8 h-8 bg-neutral-100 rounded-lg flex items-center justify-center">
                       <IconHeart className="w-4 h-4 text-cyan-400" />
                     </div>
                   </div>
                   <div>
-                    <p className="text-xs text-neutral-300">Created by Yuzu</p>
+                    <p className="text-xs text-neutral-700">Created by Yuzu</p>
                   </div>
                 </motion.div>
 
@@ -143,13 +143,13 @@ export default function MobileFooter() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -2 }}
-                  className="group flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 hover:border-cyan-500/50 transition-all"
+                  whileHover={{ y: -5 }}
+                  className="group flex items-center gap-2 bg-white rounded-lg border border-neutral-300 hover:bg-cyan-100 transition-all"
                   style={{ padding: '6px 12px', marginTop: '-8px', marginRight: '8px' }}
                 >
-                  <span className="text-xs text-neutral-300 group-hover:text-cyan-400 transition-colors">Back to Top</span>
-                  <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
-                    <IconArrowUp className="w-3 h-3 text-cyan-400" />
+                  <span className="text-xs font-medium text-neutral-600 group-hover:text-cyan-800 transition-colors">Back to Top</span>
+                  <div className="w-6 h-6 rounded-full bg-neutral-200 group-hover:bg-cyan-500/30 flex items-center justify-center transition-colors">
+                    <IconArrowUp className="w-3 h-3 text-neutral-900 group-hover:text-cyan-500 transition-colors" />
                   </div>
                 </motion.button>
               </div>
