@@ -144,12 +144,12 @@ export default function MobileFooter() {
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                  className="group flex items-center gap-2 bg-cyan-50 rounded-lg border border-cyan-200 hover:bg-cyan-100 transition-all"
+                  className="group flex items-center gap-2 bg-white rounded-lg border border-neutral-300 hover:bg-cyan-100 transition-all"
                   style={{ padding: '6px 12px', marginTop: '-8px', marginRight: '8px' }}
                 >
-                  <span className="text-xs text-cyan-800 transition-colors">Back to Top</span>
-                  <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
-                    <IconArrowUp className="w-3 h-3 text-cyan-500" />
+                  <span className="text-xs text-neutral-900 group-hover:text-cyan-800 transition-colors">Back to Top</span>
+                  <div className="w-6 h-6 rounded-full bg-neutral-200 group-hover:bg-cyan-500/30 flex items-center justify-center transition-colors">
+                    <IconArrowUp className="w-3 h-3 text-neutral-900 group-hover:text-cyan-500 transition-colors" />
                   </div>
                 </motion.button>
               </div>
