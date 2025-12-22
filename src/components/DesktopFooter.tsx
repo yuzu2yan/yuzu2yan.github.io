@@ -152,7 +152,7 @@ export default function DesktopFooter() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  whileHover={{ y: -5 }}
                   className="group flex items-center gap-2 bg-white rounded-lg border border-neutral-300 hover:bg-cyan-100 transition-all absolute"
                   style={{ padding: '10px 20px', top: '-50px', right: '20px' }}
                 >
