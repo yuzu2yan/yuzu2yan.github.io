@@ -143,13 +143,13 @@ export default function MobileFooter() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -2 }}
-                  className="group flex items-center gap-2 bg-neutral-100 backdrop-blur-sm rounded-lg border border-neutral-200 hover:bg-neutral-200 hover:border-cyan-500/50 transition-all"
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  className="group flex items-center gap-2 bg-cyan-50 rounded-lg border border-cyan-200 hover:bg-cyan-100 transition-all"
                   style={{ padding: '6px 12px', marginTop: '-8px', marginRight: '8px' }}
                 >
-                  <span className="text-xs text-neutral-700 group-hover:text-cyan-400 transition-colors">Back to Top</span>
+                  <span className="text-xs text-cyan-800 transition-colors">Back to Top</span>
                   <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
-                    <IconArrowUp className="w-3 h-3 text-cyan-400" />
+                    <IconArrowUp className="w-3 h-3 text-cyan-500" />
                   </div>
                 </motion.button>
               </div>

@@ -109,32 +109,3 @@ export function FloatingDots({ className }: { className?: string }) {
     </div>
   )
 }
-
-export function HexagonPattern({ className }: { className?: string }) {
-  return (
-    <div className={cn("absolute inset-0 overflow-hidden pointer-events-none opacity-5", className)}>
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="hexagons" width="50" height="43.4" patternUnits="userSpaceOnUse">
-            <polygon points="24.8,22 37.3,14.3 37.3,7.7 24.8,0 12.3,7.7 12.3,14.3" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="0.5"
-            />
-            <polygon points="49.8,22 62.3,14.3 62.3,7.7 49.8,0 37.3,7.7 37.3,14.3" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="0.5"
-            />
-            <polygon points="12.3,43.4 24.8,43.4 37.3,35.7 37.3,29.1 24.8,21.4 12.3,29.1" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="0.5"
-            />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hexagons)" />
-      </svg>
-    </div>
-  )
-}
