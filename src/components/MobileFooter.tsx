@@ -147,7 +147,7 @@ export default function MobileFooter() {
                   className="group flex items-center gap-2 bg-white rounded-lg border border-neutral-300 hover:bg-cyan-100 transition-all"
                   style={{ padding: '6px 12px', marginTop: '-8px', marginRight: '8px' }}
                 >
-                  <span className="text-xs text-neutral-900 group-hover:text-cyan-800 transition-colors">Back to Top</span>
+                  <span className="text-xs font-medium text-neutral-600 group-hover:text-cyan-800 transition-colors">Back to Top</span>
                   <div className="w-6 h-6 rounded-full bg-neutral-200 group-hover:bg-cyan-500/30 flex items-center justify-center transition-colors">
                     <IconArrowUp className="w-3 h-3 text-neutral-900 group-hover:text-cyan-500 transition-colors" />
                   </div>

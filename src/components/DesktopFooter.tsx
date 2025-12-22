@@ -156,7 +156,7 @@ export default function DesktopFooter() {
                   className="group flex items-center gap-2 bg-white rounded-lg border border-neutral-300 hover:bg-cyan-100 transition-all absolute"
                   style={{ padding: '10px 20px', top: '-50px', right: '20px' }}
                 >
-                  <span className="text-sm text-neutral-900 group-hover:text-cyan-800 transition-colors">Back to Top</span>
+                  <span className="text-sm font-medium text-neutral-600 group-hover:text-cyan-800 transition-colors">Back to Top</span>
                   <div className="w-8 h-8 rounded-full bg-neutral-200 group-hover:bg-cyan-500/30 flex items-center justify-center transition-colors">
                     <IconArrowUp className="w-4 h-4 text-neutral-900 group-hover:text-cyan-500 transition-colors" />
                   </div>
