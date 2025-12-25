@@ -124,7 +124,7 @@ export default function DesktopProfile() {
                 
                 <div className="text-base sm:text-lg text-neutral-600 leading-relaxed">
                   <TypewriterEffect
-                    words="Hello! As a first-year master's student pursuing computer science, I am specializing in intelligent robot using digital twin and world models. My academic journey is dedicated to exploring the intersection between technology and creativity."
+                    words="Hello! As a master's student pursuing computer science, I'm specializing in intelligent robot with Digital-Twins and World Models. My academic journey is dedicated to exploring the intersection between technology and creativity."
                     className="block"
                     delay={0.5}
                     speed={0.02}

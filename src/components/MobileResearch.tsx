@@ -53,7 +53,7 @@ export default function MobileResearch() {
                       • Intelligent Robotics
                     </p>
                     <p className="text-base text-neutral-700 leading-relaxed">
-                      • Digital Twin
+                      • Digital-Twins
                     </p>
                     <p className="text-base text-neutral-700 leading-relaxed">
                       • World Models

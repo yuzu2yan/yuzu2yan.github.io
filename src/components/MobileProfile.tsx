@@ -96,7 +96,7 @@ export default function MobileProfile() {
                     
                     <div className="text-base text-neutral-600 leading-relaxed max-w-xs text-left w-full" style={{ paddingLeft: '16px', paddingRight: '16px' }}>
                       <TypewriterEffect
-                        words="Hello! As a first-year master's student pursuing computer science, I am specializing in intelligent robot using digital twin and world models."
+                        words="Hello! As a master's student pursuing computer science, I'm specializing in intelligent robot with Digital-Twins and World Models."
                         className="block"
                         delay={0.5}
                         speed={0.02}
