@@ -99,7 +99,7 @@ export default function MobileProfile() {
                         words="Hello! As a master's student pursuing computer science, I'm specializing in intelligent robot with Digital-Twins and World Models."
                         className="block"
                         delay={0.5}
-                        speed={0.02}
+                        speed={0.015}
                       />
                     </div>
                   </div>
