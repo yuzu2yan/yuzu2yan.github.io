@@ -127,7 +127,7 @@ export default function DesktopProfile() {
                     words="Hello! As a master's student pursuing computer science, I'm specializing in intelligent robot with Digital-Twins and World Models. My academic journey is dedicated to exploring the intersection between technology and creativity."
                     className="block"
                     delay={0.5}
-                    speed={0.02}
+                    speed={0.015}
                   />
                 </div>
               </div>
