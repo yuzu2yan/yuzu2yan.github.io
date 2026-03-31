@@ -64,30 +64,77 @@ export default function MobileResearch() {
                   </div>
                 </div>
 
-                {/* Current Research */}
+                {/* Publications */}
                 <div className="relative">
                   <div className="mb-6">
                     <h3 className="text-xl font-bold text-black">
-                      Current Research
+                      Publications
                     </h3>
                   </div>
-                  
-                  <div className="space-y-4">
-                    <h4 className="text-lg font-semibold text-black">
-                      Autonomous Mobile-Sensor Placement System Using Deep Reinforcement Learning for Digital Twin Construction
-                    </h4>
-                    <p className="text-base text-neutral-700 leading-relaxed">
-                      By enabling mobility in LiDAR-equipped robots, the system dynamically adjusted sensor positions to expand coverage, providing a practical and scalable solution for sensor placement in complex, changing urban environments.
-                    </p>
-                  </div>
-                  
-                  <div className="space-y-4 mt-6">
-                    <h4 className="text-lg font-semibold text-black">
-                      World Model-Based Communication Prediction and Multi-Robot Coordination Enabled by Digital Twin
-                    </h4>
-                    <p className="text-base text-neutral-700 leading-relaxed">
-                      Autonomous robotic systems using World Models for predictive communication and control, leveraging digital twins and multi-agent simulation to study adaptation in dynamic, networked environments.
-                    </p>
+
+                  <div className="space-y-8">
+                    {/* 2026 */}
+                    <div className="space-y-3">
+                      <p className="text-sm text-neutral-500">2026</p>
+                      <a
+                        href="https://ieeexplore.ieee.org/document/11366268"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-start gap-1 text-base font-semibold text-black leading-snug hover:text-neutral-500 transition-colors duration-200"
+                      >
+                        Multi-sensor-robot Placement System using Reinforcement Learning for 3D Digital-twins
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-3.5 h-3.5 shrink-0 mt-1"
+                        >
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                      </a>
+                      <p className="text-sm text-neutral-600">
+                        J. Kozen, R. Shinkuma, G. Trovato and N. Mandayam
+                      </p>
+                      <p className="text-sm text-neutral-600 italic">
+                        2026 IEEE 23rd Consumer Communications &amp; Networking Conference (CCNC), Las Vegas, NV, USA, pp. 1–2
+                      </p>
+                    </div>
+
+                    {/* 2025 */}
+                    <div className="space-y-3">
+                      <p className="text-sm text-neutral-500">2025</p>
+                      <a
+                        href="https://www.itu.int/md/T25-SG21-C-0030/en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-start gap-1 text-base font-semibold text-black leading-snug hover:text-neutral-500 transition-colors duration-200"
+                      >
+                        Proposal to add sensors in infrastructure for surveillance
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="w-3.5 h-3.5 shrink-0 mt-1"
+                        >
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                      </a>
+                      <p className="text-sm text-neutral-600 italic">
+                        ITU-T, Study Group 21
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

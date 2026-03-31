@@ -12,6 +12,16 @@ import 'swiper/css/free-mode'
 
 const projects = [
   {
+    title: "IEEE CCNC & CES 2026",
+    description: "Attended CES 2026 in Las Vegas and presented a paper at IEEE CCNC 2026 on \"Multi-sensor-robot placement using reinforcement learning for 3D digital twins\".",
+    award: "Paper Published at IEEE CCNC!",
+    awardNoTrophy: true,
+    color: "from-cyan-400 to-blue-600",
+    image: "/images/ccnc_2026.jpg",
+    link: "https://ieeexplore.ieee.org/document/11366268",
+    linkLabel: "View Paper",
+  },
+  {
     title: "NASA Space Apps Challenge 2024",
     description: "I created a web application that visualizes the relationship between GHG emission factors and global warming.",
     award: "Tokyo Venue Special Award!",
@@ -211,7 +221,7 @@ export default function DesktopProjects() {
                           {/* Award */}
                           {project.award && (
                             <p className="text-sm font-semibold text-amber-600">
-                              🏆 {project.award}
+                              {project.awardNoTrophy ? "" : "🏆 "}{project.award}
                             </p>
                           )}
                           
@@ -229,7 +239,7 @@ export default function DesktopProjects() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center text-cyan-500 hover:text-cyan-600 font-medium group/link"
                           >
-                            View Project
+                            {project.linkLabel ?? "View Project"}
                             <IconExternalLink className="w-4 h-4 ml-1 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
                           </a>
                         </div>

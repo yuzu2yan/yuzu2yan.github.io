@@ -73,7 +73,7 @@ export default function MobileProfile() {
                     <div className="relative w-40 h-40">
                       <Image
                         src="/images/profile_img.jpg"
-                        alt="Joe Kozen (Yuzu)"
+                        alt="Yuzuru Kozen"
                         fill
                         className="object-cover rounded-3xl shadow-2xl"
                         priority
@@ -87,7 +87,7 @@ export default function MobileProfile() {
                   <div className="space-y-4 flex flex-col items-center">
                     <div className="text-center">
                       <h2 className="text-2xl font-bold text-black mb-2">
-                        Joe Kozen (Yuzu)
+                        Yuzuru Kozen
                       </h2>
                       <p className="text-base text-cyan-600 font-medium">
                         Developer · Designer · Creator

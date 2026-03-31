@@ -82,7 +82,7 @@ export default function DesktopProfile() {
                   <div className="relative w-64 h-64">
                     <Image
                       src="/images/profile_img.jpg"
-                      alt="Joe Kozen (Yuzu)"
+                      alt="Yuzuru Kozen"
                       fill
                       className="object-cover rounded-3xl shadow-2xl"
                       priority
@@ -115,7 +115,7 @@ export default function DesktopProfile() {
               <div className="space-y-6">
                 <div>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-2">
-                    Joe Kozen (Yuzu)
+                    Yuzuru Kozen
                   </h2>
                   <p className="text-lg sm:text-xl text-cyan-600 font-medium">
                     Developer · Designer · Creator
